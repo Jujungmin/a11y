@@ -10,7 +10,7 @@
 	<script src="../js/main.js"></script>
 </head>
 <body>
-	<div class="contents">
+	<section class="contents">
 		<div class="inner">
 			<h2 class="main-heading2">웹회원가입</h2>
 			<p class="title-sub">KB생명보험의 다양하고 폭넓은 정보와 함께하세요.</p>
@@ -23,7 +23,7 @@
 				<div class="input-wrap">
 					<label for="joinEmail">이메일</label>
 					<input type="email" class="input-custom input-email" id="joinEmail">
-					<button class="button-check">중복확인&gt;</button>
+					<button type="button" class="button-check">중복확인&gt;</button>
 					<p class="notice">이메일 형식으로 입력해 주세요.(예시-kblife@kbfg.com)</p>
 				</div>
 				<div class="input-wrap">
@@ -34,13 +34,13 @@
 				<div class="input-wrap">
 					<label for="joinPwd2">비밀번호 확인</label>
 					<input type="password" class="input-custom" id="joinPwd2" placeholder="영문,숫자.특수기호 포함 8자리 이상">
-					<button class="button-delete" aria-label="비밀번호 입력지우기"></button>
+					<button type="button" class="button-delete" aria-label="비밀번호 입력지우기"></button>
 					<p class="notice">비밀번호를 동일하게 재입력해 주세요.</p>
 				</div>
 				<div class="input-wrap">
 					<label for="joinBirth">생년월일</label>
 					<input type="text" class="input-custom" id="joinBirth" placeholder="예시)19900101" maxlength="8">
-					<button class="button-delete" aria-label="비밀번호 입력지우기"></button>
+					<button type="button" class="button-delete" aria-label="비밀번호 입력지우기"></button>
 					<p class="notice">생년월일 8자를 정확하게 입력해 주세요.</p>
 				</div>
 			</div>
@@ -49,41 +49,61 @@
 					<input type="checkbox" class="check-custom" id="checkAll">
 					<label for="checkAll">서비스 이용약관 전체동의</label>
 				</div>
-				<div class="check-wrap">
-					<input type="checkbox" class="check-custom" id="check1">
-					<label for="check1">[필수]서비스 이용약관 동의</label>
-					<button type="button" class="modal-button">보기</button>
+				<div class="join-check">
+					<div class="check-wrap">
+						<input type="checkbox" class="check-custom check-choice" id="check1">
+						<label for="check1">[필수]서비스 이용약관 동의</label>
+						<button type="button" class="modal-button" onclick="modalOpen('modal1')">보기</button>
+					</div>
+					<div class="check-wrap">
+						<input type="checkbox" class="check-custom check-choice" id="check2">
+						<label for="check2">[필수]개인정보 수집 및 이용동의</label>
+						<button type="button" class="modal-button">보기</button>
+					</div>
+					<div class="check-wrap">
+						<input type="checkbox" class="check-custom check-choice" id="check3">
+						<label for="check3">[선택]마케팅 활용 및 광고성 정보 수신 동의</label>
+						<button type="button" class="modal-button">보기</button>
+					</div>
 				</div>
-				<div class="check-wrap">
-					<input type="checkbox" class="check-custom" id="check2">
-					<label for="check2">[필수]개인정보 수집 및 이용동의</label>
-					<button type="button" class="modal-button">보기</button>
 				</div>
-				<div class="check-wrap">
-					<input type="checkbox" class="check-custom" id="check3">
-					<label for="check3">[선택]마케팅 활용 및 광고성 정보 수신 동의</label>
-					<button type="button" class="modal-button">보기</button>
-				</div>
-			</div>
 			<div class="button-wrap">
-				<a href="javascript:void(0);" class="button-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod officiis sed illo deleniti. Assumenda at voluptate, autem necessitatibus eveniet natus maxime incidunt impedit tempora optio, praesentium consequatur laudantium placeat sed?</a>
-				<button class="button-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod officiis sed illo deleniti. Assumenda at voluptate, autem necessitatibus eveniet natus maxime incidunt impedit tempora optio, praesentium consequatur laudantium placeat sed?</button>
+				<a href="javascript:void(0);" class="button-main">다음</a>
+				<!-- <button type="button" class="button-main">다음</button> -->
 			</div>
 		</div>
-	</div>
+	</section>
 
-	<!-- modal popup -->
-	<!-- Q: modal tabindex="-1" / aria-hidden="true" 사용 이유 명확히 모르겠음 -->
-	<div class="modal" tabindex="-1" aria-labelledby="modal example" aria-hidden="true">
+	<!-- modal -->
+	<div class="modal modal1" tabindex="-1" aria-label="modal example1" aria-hidden="true">
+		<!-- aria-modal="true" role="dialog" aria-hidden 없어짐 -->
+		<!-- aria-labelledby를 설명하는 id가 있어야한다.(요소에대한 레이블을 포함해야 됨.) =>> aria-label로 써준다. -->
 		<div class="modal-wrap">
 			<div class="modal-header">
 				<h3 class="main-heading3">마케팅 활용 및 광고성 정보 수신 동의</h3>
-				<button type="button" class="modal-close" aria-label="닫기"></button>
+				<button type="button" class="modal-close" aria-label="닫기" onclick="modalClose(this)"></button>
 			</div>
-			<div class="pop-content">
-				<p>내용입니다.</p>
+			<div class="modal-content">
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque a aut excepturi modi quo voluptatem itaque, dicta explicabo sed voluptates quisquam architecto, maiores natus nam cumque! Ullam ipsam sunt tempora.</p>
+				<button type="button" class="button-main" onclick="modalOpen('modal2')">다음</button>
+			</div>
+		</div>
+	</div>
+	<div class="modal modal2" tabindex="-1" aria-label="modal example2" aria-hidden="true">
+		<div class="modal-wrap">
+			<div class="modal-header">
+				<h3 class="main-heading3">test</h3>
+				<button type="button" class="modal-close" aria-label="닫기" onclick="modalClose('all')"></button>
+			</div>
+			<div class="modal-content">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente et, minus perferendis quae magni veritatis possimus, similique ad praesentium nam corrupti deserunt id obcaecati deleniti doloribus ab ipsum unde ullam.
+				Expedita, libero numquam, quia asperiores consectetur quaerat fugiat possimus architecto molestiae sed deleniti rerum blanditiis doloremque voluptatibus excepturi! Pariatur itaque quae delectus dignissimos excepturi esse deserunt sapiente corporis et aspernatur!
+				Dolorum aliquid enim maxime qui dolores sit molestiae libero blanditiis iusto natus aspernatur minus, magni dolorem quaerat repellat, odio deserunt. Quidem minus hic non veritatis fugiat similique vitae nihil aut.
+				Vitae sit reiciendis sequi, neque ex ipsam nulla illum unde? Soluta labore minus officiis aperiam laboriosam dolorum enim nostrum. Nemo debitis reprehenderit exercitationem architecto vel ipsum quod maiores porro cumque.
+				Qui illo nulla recusandae libero soluta, nemo a quidem necessitatibus porro est deserunt earum? Vitae minus, recusandae sapiente molestiae maxime quia dolor illo officia facere sed aspernatur quam adipisci in?</p>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
+<!-- // join.html -->

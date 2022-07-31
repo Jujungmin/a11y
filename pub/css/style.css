@@ -50,22 +50,20 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-
-/************************
-join 
-************************/
 input::placeholder,
 textarea::placeholder {color: #ccc;}
 button {padding: 0; border: none; background: transparent; cursor: pointer;}
 a{text-decoration: none;}
-.sr-only{position: absolute; overflow: hidden; width: 1px; height: 1px; margin: -1px; border: 0; clip: rect(0,0,0,0);}
+.sr-only {position: absolute; padding: 0; width: 1px; height: 1px; margin: -1px; border: 0; white-space: nowrap; clip: rect(0 0 0 0); -webkit-clip-path: inset(50%); clip-path: inset(50%); overflow: hidden;}
 .contents {padding: 64px 0 160px;}
 .inner {width: 960px; margin:0 auto;}
-
 .main-heading2 {font-size:30px;}
 .main-heading3 {font-size:20px;}
 .title-sub {padding-top: 20px; font-size: 15px; color: #8e8c8e; font-weight: bold;}
+
+/************************
+join 
+************************/
 .join-form {border: 1px solid #f0f0f0; border-bottom: 0px; padding: 18px 0 53px; margin-top: 44px;}
 .join-form .input-wrap {position: relative; width: 400px; margin: auto;}
 .join-form .input-wrap label {display: block; padding-bottom: 6px; margin-top: 53px; font-size: 15px; color: #555; font-weight: bold; text-indent: 15px;}
@@ -79,12 +77,14 @@ a{text-decoration: none;}
 .check-custom {position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; clip: rect(0,0,0,0);}
 .join-service {padding: 50px 0 66px; background-color: #fafafa; border: 1px solid #f0f0f0; border-top: 0px;}
 .join-service .check-wrap {display: flex; width: 430px; margin: auto; box-sizing: border-box;}
-.join-service .check-wrap ~ .check-wrap {margin-top: 16px; padding-left: 35px;}
-.join-service .check-wrap:first-child label {font-weight: bold; color: #222;}
+.join-service .join-check .check-wrap {margin-top: 16px; padding-left: 35px;}
+.join-service > .check-wrap:first-child label {font-weight: bold; color: #222;}
 .join-service .check-wrap label {display: inline-block; position: relative; padding-left: 36px;font-size: 15px; color:#888; cursor: pointer;}
 .join-service .check-wrap label:before{display: block; content: ''; width: 26px; height: 25px; background: url('../images/chk_off.png') center top no-repeat; position: absolute; top: -3px; left: 0;}
 .join-service .modal-button{margin-left:auto; font-size: 15px; text-decoration: underline;}
 .join-service .check-wrap [type='checkbox']:checked + label::before {background-image: url('../images/chk_on.png');}
+/* input을 sr-only했을 경우, 아래처럼 스타일 적용 */
+.join-service .check-wrap [type='checkbox']:focus + label::before {outline: auto;}
 
 .button-wrap {margin-top: 50px; text-align: center; font-size: 0;}
 /*
@@ -92,8 +92,9 @@ button 은 기본적으로 inline-block / box-sizing: border-box가 기본적으
 a태그도 같이 써줘야 되기때문에 inline-block (+) box-sizing도 같이 넣어줘야 한다.
 */
 /*
-line-height, height 넣어주면 button, a tag 크기 다름.
+line-height, height 넣어주면 button, anchor tag 크기 다름.
 line-height=1주고 padding으로 높이값맞추기
+=>> 두 줄까지 확인.
 */
 .button-main {display: inline-block; padding: 18px 10px 19px; background-color: #9e8c6e; width: 400px; margin: auto; text-align: center; font-size: 18px; line-height: 1; color: #fff; box-sizing: border-box; overflow: hidden; vertical-align: top;}
 .button-main + .button-main {margin-left:10px;}
@@ -101,7 +102,10 @@ line-height=1주고 padding으로 높이값맞추기
 /************************
 modal
 ************************/
-/* .modal-wrap {position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 960px; height: 574px; background-color: #eaeaea;} */
-.modal-wrap .modal-header {display: flex; flex-direction: row;}
-.modal-wrap .main-heading3 {font-weight: normal;}
-.modal-wrap .modal-close {width:24px; height: 24px; background: url('../images/ico_pop_big_close.png') no-repeat;}
+.modal {display: none; position: relative; z-index: 1000;}
+.modal .modal-wrap {position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 960px; height: 574px; border-radius: 30px; background-color: #fff;}
+.modal .modal-wrap .modal-header {display: flex; flex-direction: row; padding: 25px 30px; border-bottom: 1px solid #eaeaea;}
+.modal .modal-wrap .main-heading3 {font-weight: normal;}
+.modal .modal-wrap .modal-close {margin-left: auto; width:24px; height: 24px; background: url('../images/ico_pop_big_close.png') no-repeat;}
+.dim {position: fixed; top: 0; width: 100%; height: 100%; background-color: #000; opacity: 0.3; z-index: 999;}
+.modal .modal-wrap .modal-content {margin:40px 50px; height: 419px; overflow-y: auto; box-sizing: border-box;}
