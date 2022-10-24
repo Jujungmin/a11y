@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body, html, ul {padding: 0; margin: 0;}
+		ul {list-style: none;}
+
+		.inner {max-width: 960px; margin: 0 auto;}
+		.box-list {position: relative; display: flex; flex-wrap: wrap; background-color: #f1f1f1; border-left: 1px solid #999; border-right: 1px solid #999;}
+		.box-list::before {content: ''; width: 1px; height: 100%; background-color: #999; position: absolute; top: 0; left: 33.333%;}
+		.box-list::after {content: ''; width: 1px; height: 100%; background-color: #999; position: absolute; top: 0; right: 33.333%;}
+		.box-list li {position: relative; display: flex; flex: 0 1 33.333%; padding: 10px; box-sizing: border-box;}
+		/* .box-list li::after {content: ''; width: 1px; height: 200%; background-color: #999; position: absolute; top: 0; right: 0;} */
+		.box-list li:first-child:lat-child {flex-basis: 100%;}
+		.box-list li:first-child:nth-last-child(2),
+		.box-list li:first-child:nth-last-child(2) ~ li {flex-basis: 50%;}
+		.box-list li > span {display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; word-break: break-all; overflow: hidden;}
+		.box-list .list-tit {flex: 0 0 100px; margin-right: 20px;}
+		.box-list .list-txt {margin-left: auto;}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="inner">
+		<ul class="box-list">
+			<li>
+				<span class="list-tit">1 두줄이상 두줄이상 두줄이상 두줄이상 두줄이상 두줄이상 두줄이상 두줄이상 두줄이상</span>
+				<span class="list-txt">@@@ 두줄이상 두줄이상 두줄이상 두줄이상 두줄이상 두줄이상 두줄이상 두줄이상 두줄이상</span>
+			</li>
+			<li>
+				<span class="list-tit">2</span>
+				<span class="list-txt">한줄입니다</span>
+			</li>
+			<li>
+				<span class="list-tit">3</span>
+				<span class="list-txt">000-1234-1234</span>
+			</li>
+			<li>
+				<span class="list-tit">4</span>
+				<span class="list-txt"></span>
+			</li>
+			<li>
+				<span class="list-tit">5</span>
+				<span class="list-txt">한줄입니다 한줄입니다</span>
+			</li>
+			<li>
+				<span class="list-tit"></span>
+				<span class="list-txt"></span>
+			</li>
+			<li>
+				<span class="list-tit">7</span>
+				<span class="list-txt"></span>
+			</li>
+		</ul>
+	</div>
+</div>    
+</body>
+</html>
+<!--
+[조건]
+**확장성 + 모바일에서도 가능하도록
+1) 1개일 때 100% / 2개일 때 50% / 3개일 때 33.33%(3개를 기준으로한다.)
+2) 열이 아닌 행순서로 넣어서 하나가
+3) .box-list li:nth-child(3n+1)에 스타일을 적용하면 후에 3n+1이 아닐 경우에도 스타일을 적용해야 한다.
+
+단락으로 나뉘는 디자인은 거의 푸터에서 많이 사용한다.
+푸터 이외 대부분은 데이터를 붙여 사용하므로 단락을 나누면 안된다.(후에 개발붙을 때 좋지 않음)
+(**데이터를 가져오는 부분은 최대한 간단하게 마크업해야 한다)
+-->

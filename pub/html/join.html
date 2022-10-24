@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -17,31 +18,35 @@
 			<div class="join-form">
 				<div class="input-wrap">
 					<label for="joinName">이름</label>
-					<input type="text" class="input-custom" id="joinName">
-					<p class="notice">한글/영문 최소 2자 이상 30자 이내 입력 가능합니다.</p>
+					<input type="text" class="input-custom" id="joinName" aria-labelledby="notice1">
+					<p id="notice1" class="notice">한글/영문 최소 2자 이상 30자 이내 입력 가능합니다.</p>
+					<!--
+						input에 aria-labelledby를 넣어준 이유!
+						==> input에 포커스 될 때 아래 p태그도 같이 읽어준다.
+					-->
 				</div>
 				<div class="input-wrap">
 					<label for="joinEmail">이메일</label>
-					<input type="email" class="input-custom input-email" id="joinEmail">
+					<input type="email" class="input-custom input-email" id="joinEmail" aria-labelledby="notice2">
 					<button type="button" class="button-check">중복확인&gt;</button>
-					<p class="notice">이메일 형식으로 입력해 주세요.(예시-kblife@kbfg.com)</p>
+					<p id="notice2" class="notice">이메일 형식으로 입력해 주세요.(예시-kblife@kbfg.com)</p>
 				</div>
 				<div class="input-wrap">
 					<label for="joinPwd1">비밀번호</label>
-					<input type="password" class="input-custom" id="joinPwd1" placeholder="영문,숫자.특수기호 포함 8자리 이상">
-					<p class="notice">영문, 숫자, 특수기호 포함 8자리 이상 입력해 주세요.</p>
+					<input type="password" class="input-custom" id="joinPwd1" placeholder="영문,숫자.특수기호 포함 8자리 이상" aria-labelledby="notice3">
+					<p id="notice3" class="notice">영문, 숫자, 특수기호 포함 8자리 이상 입력해 주세요.</p>
 				</div>
 				<div class="input-wrap">
 					<label for="joinPwd2">비밀번호 확인</label>
-					<input type="password" class="input-custom" id="joinPwd2" placeholder="영문,숫자.특수기호 포함 8자리 이상">
+					<input type="password" class="input-custom" id="joinPwd2" placeholder="영문,숫자.특수기호 포함 8자리 이상" aria-labelledby="notice4">
 					<button type="button" class="button-delete" aria-label="비밀번호 입력지우기"></button>
-					<p class="notice">비밀번호를 동일하게 재입력해 주세요.</p>
+					<p id="notice4" class="notice">비밀번호를 동일하게 재입력해 주세요.</p>
 				</div>
 				<div class="input-wrap">
 					<label for="joinBirth">생년월일</label>
-					<input type="text" class="input-custom" id="joinBirth" placeholder="예시)19900101" maxlength="8">
+					<input type="text" class="input-custom" id="joinBirth" placeholder="예시)19900101" maxlength="8" aria-labelledby="notice5">
 					<button type="button" class="button-delete" aria-label="비밀번호 입력지우기"></button>
-					<p class="notice">생년월일 8자를 정확하게 입력해 주세요.</p>
+					<p id="notice5" class="notice">생년월일 8자를 정확하게 입력해 주세요.</p>
 				</div>
 			</div>
 			<div class="join-service">
@@ -75,7 +80,7 @@
 	</section>
 
 	<!-- modal -->
-	<div class="modal modal1" tabindex="-1" aria-label="modal example1" aria-hidden="true">
+	<div class="modal modal1" tabindex="-1" aria-modal="true" aria-label="modal example1" aria-hidden="true">
 		<!-- aria-modal="true" role="dialog" aria-hidden 없어짐 -->
 		<!-- aria-labelledby를 설명하는 id가 있어야한다.(요소에대한 레이블을 포함해야 됨.) =>> aria-label로 써준다. -->
 		<div class="modal-wrap">
@@ -89,7 +94,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="modal modal2" tabindex="-1" aria-label="modal example2" aria-hidden="true">
+	<div class="modal modal2" tabindex="-1" aria-modal="true" aria-label="modal example2" aria-hidden="true">
 		<div class="modal-wrap">
 			<div class="modal-header">
 				<h3 class="main-heading3">test</h3>
@@ -106,4 +111,13 @@
 	</div>
 </body>
 </html>
-<!-- // join.html -->
+<!--
+?????????
+tabindex="-1" aria-hidden="true"
+경고 : ARIA hidden element must not contain focusable elements
+https://stackoverflow.com/questions/62677291/aria-hidden-elements-do-not-contain-focusable-elements-issue-when-modal-is-sho
+
+읽어보기.
+https://www.accessibility-developer-guide.com/examples/sensible-aria-usage/hidden/#:~:text=While%20you%20can%20use%20aria-hidden%3D%22true%22%20on%20any%20element,be%20careful%20when%20referencing%20hidden%20elements%20using%20aria-describedby.
+
+-->

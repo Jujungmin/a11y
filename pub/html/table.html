@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>다중테이블</title>
+	<!-- <link rel="stylesheet" href="../css/style.css"> -->
+	<style>
+		html {width: 100%; height: auto;}
+		body {margin: 0; padding: 0; font-size: 15px;}
+		p {margin: 0;}
+		.inner {max-width: 960px; margin:auto;}
+		.name-box {padding: 12px 10px; border-top: 2px solid #222; border-bottom: 1px solid #ddd;}
+		.name-box .name {font-weight: bold; color: blue;}
+		.step-info {display: flex; margin-top: 40px;}
+		.step-info .rit {margin-left: auto;}
+		/* table */
+		caption {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; border: 0; white-space: nowrap; clip: rect(0 0 0 0); clip-path: inset(50%); overflow: hidden;}
+		table {width: 100%; table-layout: fixed; border-collapse: collapse;}
+		.table-wrap {position: relative; margin-top: 20px;}
+		.table-default thead::before {content: ''; display: block; width: 100%; height: 1px; background-color: #222; position: absolute;}
+		.table-default thead::after {content: ''; display: block; width: 100%; height: 1px; background-color: #888; position: absolute;}
+		.table-wrap th {padding:10px; border: 1px solid #ddd; background-color: #fff;}
+		.table-default th {border-bottom-width: 0px;}
+		.table-wrap th:first-of-type {border-left-width: 0px;}
+		.table-wrap th:last-of-type {border-right-width: 0px;}
+		.table-wrap thead th p {font-size: 12px; color: #888;}
+		.table-wrap tbody td {padding: 10px; text-align: center; border-left: 1px solid #ddd;}
+		.table-wrap tbody td:first-of-type {border-left-width: 0;}
+		.table-wrap tbody tr {border-bottom: 1px solid #ddd;}
+		.table-wrap + .notice-text{margin-top: 30px;}
+		.notice-text {font-size: 13px; color: #666;}
+		.notice-text::before{content: '※'; padding-right: 5px;}
+		.notice-text ~ .notice-text {margin-top: 5px;}
+
+		.table-bg thead tr:first-of-type {border-top: 1px solid #222;}
+		.table-bg th {background-color: #f1f1f1;}
+		.table-bg thead::before {content: ''; display: block; width: 100%; height: 1px; background-color: #999; position: absolute;}
+
+		@media (max-width: 960px) {
+			.inner {margin: 0 10px;}
+			.step-info {display: block;}
+			.table-wrap .scroll-x {overflow: auto;}
+			.table-wrap table {min-width:960px;}
+		}
+	</style>
+</head>
+<body>
+<section class="contents">
+	<div class="inner">
+		<h1>나의 대출현황 조회</h1>
+		<div class="name-box">
+			<span class="name">백@은</span> 님의 대출계약 내역입니다.
+		</div>
+		<div class="step-info">
+			<p class="lft">자세한 대출이력을 보시려면 우측에 '조회'버튼을 눌러주세요.</p>
+			<p class="rit">기준일자 : 2025년 05월 16일</p>
+		</div>
+		<div class="table-wrap">
+			<div class="table-default scroll-x">
+				<table>
+					<caption>나의대출현황 조회</caption>
+					<colgroup>
+						<col style="width: 150px;" />
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+					</colgroup>
+					<thead>
+						<tr>
+							<th rowspan="2">보험상품<p>(증권번호/가입증서번호)</p></th>
+							<th rowspan="2">대출이율</th>
+							<th id="rd1" colspan="4">보험계약 대출잔액</th>
+							<th id="rd2" colspan="2">자동대출납부잔액</th>
+							<th rowspan="2">기대출<br/>원리금</th>
+							<th rowspan="2">이력<br/>보기</th>
+						</tr>
+						<tr>
+							<th id="rd1-1">대출금</th>
+							<th id="rd1-2">이자</th>
+							<th id="rd1-3">대출<br/>지급방식</th>
+							<th id="rd1-4">납부기일</th>
+							<th id="rd2-1">대출금</th>
+							<th id="rd2-2">이자</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- <tr>
+							<td colspan="10">해당하는 대출계약내역이 없습니다.</td>
+						</tr> -->
+						<tr>
+							<td>보험상품</td>
+							<td>대출이율</td>
+							<td headers="rd1 rd1-1">대출금</td>
+							<td headers="rd1 rd1-2">이자</td>
+							<td headers="rd1 rd1-3">대출지급방식</td>
+							<td headers="rd1 rd1-4">납부기일</td>
+							<td headers="rd2 rd2-1">대출금</td>
+							<td headers="rd2 rd2-2">이자</td>
+							<td>기대출원리금</td>
+							<td>이력보기</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<p class="notice-text">조회하실 계약의 우측에 있는 '조회하기' 버튼을 눌러주십시오.</p>
+		<p class="notice-text">변액계약 특별계정지급방식의 경우, 신청 해당월 2회까지 대출 가능합니다.</p>
+	</div>
+</section>
+
+<section class="contents">
+	<div class="inner">
+		<h1>방카슈랑스공시실</h1>
+		<div class="table-wrap">
+			<div class="table-bg scroll-x">
+				<table>
+					<caption>방카슈랑스공시실 목록</caption>
+					<colgroup>
+						<col style="width: auto">
+						<col style="width: 15%">
+						<col style="width: auto">
+						<col style="width: auto">
+						<col style="width: auto">
+						<col style="width: auto">
+						<col style="width: auto">
+						<col style="width: auto">
+						<col style="width: auto">
+						<col style="width: auto">
+						<col style="width: auto">
+						<col style="width: auto">
+					</colgroup>
+					<thead>
+						<tr>
+							<th rowspan="3">상품군</th>
+							<th rowspan="3">상품명</th>
+							<th rowspan="3">보험료납입주기</th>
+							<th rowspan="3">보험료납입기간</th>
+							<th id="rd3" colspan="7">금융기간보험대리점 모집 수수료율</th>
+							<th rowspan="3">기타(SBI저축)</th>
+						</tr>
+						<tr>
+							<th id="rd3-1" colspan="5">은행</th>
+							<th id="rd3-2" rowspan="2">증권회사</th>
+							<th id="rd3-3" rowspan="2">신용카드보험대리점</th>
+						</tr>
+						<tr>
+							<th id="rd3-1-1">국민</th>
+							<th id="rd3-1-2">농협</th>
+							<th id="rd3-1-3">하나</th>
+							<th id="rd3-1-4">대구</th>
+							<th id="rd3-1-5">신한</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- <tr>
+							<td colspan="12">등록된 내역이 없습니다.</td>
+						</tr> -->
+						<tr>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+							<td headers="rd3 rd3-1 rd3-1-1">국민</td>
+							<td headers="rd3 rd3-1 rd3-1-2">농협</td>
+							<td headers="rd3 rd3-1 rd3-1-3">하나</td>
+							<td headers="rd3 rd3-1 rd3-1-4">대구</td>
+							<td headers="rd3 rd3-1 rd3-1-5">신한</td>
+							<td headers="rd3 rd3-2">증권회사</td>
+							<td headers="rd3 rd3-3">신용카드보험대리점</td>
+							<td>-</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</section>
+</body>
+</html>
+
+<!--
+- 만일 "속성:값"으로 이루어질때, thead 없이 tbody에 td로만 감싸준다.
+- 웹접근성 테이블 headers id (다중테이블일때만 사용 / 게시판 공지사항은 쓰지 않는다.)
+- scope는 쓰지 않는다. colgroup도!
+https://webclub.tistory.com/264
+
+웹접근성 스크린리더기가 한번에 다읽어준 후에 모든 접근성을 탭키로 접근가능하도록 한다.(a, input, button, textarea)
+
+aria-label vs aria-labelledby
+aria-label :: 이미지 대체 텍스트 / 현재 요소 설명
+aria-labelledby :: 해당영역과 현재 요소 설명
+https://code-examples.net/ko/q/12b547d
+
+++읽어보기
+https://mulder21c.github.io/aria-practices/#intro
+-->

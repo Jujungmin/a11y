@@ -54,7 +54,17 @@ input::placeholder,
 textarea::placeholder {color: #ccc;}
 button {padding: 0; border: none; background: transparent; cursor: pointer;}
 a{text-decoration: none;}
+
+
 .sr-only {position: absolute; padding: 0; width: 1px; height: 1px; margin: -1px; border: 0; white-space: nowrap; clip: rect(0 0 0 0); -webkit-clip-path: inset(50%); clip-path: inset(50%); overflow: hidden;}
+.visually-hidden, .visually-hidden-focusable:not(:focus):not(:focus-within) {
+	position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+/* 
+[참고] https://getbootstrap.com/docs/5.0/helpers/visually-hidden/
+visually-hidden-focusable :: 화면상에서는 보이지 않지만 tab키로 포커스가 가능하다.
+*/
+
 .contents {padding: 64px 0 160px;}
 .inner {width: 960px; margin:0 auto;}
 .main-heading2 {font-size:30px;}
@@ -65,8 +75,8 @@ a{text-decoration: none;}
 join 
 ************************/
 .join-form {border: 1px solid #f0f0f0; border-bottom: 0px; padding: 18px 0 53px; margin-top: 44px;}
-.join-form .input-wrap {position: relative; width: 400px; margin: auto;}
-.join-form .input-wrap label {display: block; padding-bottom: 6px; margin-top: 53px; font-size: 15px; color: #555; font-weight: bold; text-indent: 15px;}
+.join-form .input-wrap {position: relative; width: 400px; margin: 53px auto 0;}
+.join-form .input-wrap label {display: block; padding-bottom: 6px; font-size: 15px; color: #555; font-weight: bold; text-indent: 15px;}
 .join-form .input-custom {position: relative; width: 100%; padding: 0 20px; height: 48px; border: none; border-bottom: 1px solid #e3e3e3; font-size: 18px; box-sizing: border-box; }
 .join-form .input-custom:focus {border-color: #ffbc00;}
 .join-form .notice {display:block; padding-top: 12px; font-size:13px; color: #555;}
@@ -90,6 +100,7 @@ join
 /*
 button 은 기본적으로 inline-block / box-sizing: border-box가 기본적으로 내장
 a태그도 같이 써줘야 되기때문에 inline-block (+) box-sizing도 같이 넣어줘야 한다.
+(+221005추가) height,overflow는 같이 넣어주는건 한줄처리 버튼만 허용
 */
 /*
 line-height, height 넣어주면 button, anchor tag 크기 다름.
