@@ -77,20 +77,22 @@ board
 .table-wrap table {width: 100%; table-layout: fixed;}
 .table-wrap thead th {background-color: #fff; padding: 10px; font-size: 14px; border: 0px solid #222; border-top-width: 2px; border-bottom-width: 1px;}
 .table-wrap tbody tr {border-bottom: 1px solid #ddd;}
-.table-wrap tbody td {padding: 10px; font-size: 14px; text-align: center; vertical-align: middle; word-break: break-all; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+.table-wrap tbody td {padding: 10px; font-size: 14px; text-align: center; vertical-align: middle;}
+.table-wrap tbody td > a {display:-webkit-box; word-break: break-all; text-overflow: ellipsis; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 1;}
+.state {display: inline-block; min-width: 30px; height:20px; padding: 0 8px; margin-bottom:5px; font-size:12px; text-align: center; line-height:20px; background: #ddd; border-radius: 10px;}
 .table-wrap tbody td:nth-of-type(2) {text-align:left;}
 /* paging */
 .paging .paging-area {display: flex; padding: 20px 0; flex-direction: row; justify-content: center; align-items: center;}
 .table-default .paging::after {display: block; content: ''; width: 100%; height: 1px; background-color: #ddd;}
 .paging .paging-area .paging-button {font-size: 14px; color: inherit;}
 .paging .paging-area a {position: relative; display: block; margin: 0 7px; font-size: 14px; color: inherit;}
-.paging .paging-area a::after {display: inline-block; content: ''; width: 2px; height: 2px; border-radius: 50%; background-color: #222; position: absolute; top: 5px; right: -7px; cursor: auto;}
+.paging .paging-area a::after {display: inline-block; content: ''; width: 2px; height: 2px; border-radius: 50%; background-color: #222; position: absolute; top: 7px; right: -7px; cursor: auto;}
 .paging .paging-area a:last-of-type:after {display: none;}
-.paging .paging-area a.active {color: blue; font-weight: bold;}
+.paging .paging-area a.active {color: blue; font-weight: bold; cursor: auto; pointer-events: none;}
 .paging .paging-area .prev-button {position: relative; margin-right: 20px; line-height: 1;}
 .paging .paging-area .next-button {position: relative; margin-left: 20px; line-height: 1;}
-.prev-button::before {display: inline-block; content: ''; width: 12px; height: 12px; border: 1px solid #888; border-radius: 2px; vertical-align: top; margin-right: 5px;}
-.prev-button::after { display: inline-block; content: ''; width: 4px; height: 4px; border: 1px solid #888; border-width: 0px 0px 1px 1px; transform: rotate(45deg); position: absolute; top: 5px; left: 5px;}
+.prev-button::before {display: inline-block; content: ''; width: 12px; height: 12px; border: 1px solid #888; border-radius: 2px; vertical-align: top; margin-top: 3px; margin-right: 5px;}
+.prev-button::after { display: inline-block; content: ''; width: 4px; height: 4px; border: 1px solid #888; border-width: 0px 0px 1px 1px; transform: rotate(45deg); position: absolute; top: 8px; left: 5px;}
 .next-button::after {display: inline-block; content: ''; margin-left: 5px; width: 12px; height: 12px; border: 1px solid #888; border-radius: 2px; vertical-align: top;}
 .next-button::before {display: inline-block; content: ''; width: 4px; height: 4px; border: 1px solid #888; border-width: 1px 1px 0px 0px; transform: rotate(45deg); position: absolute; top: 5px; right: 5px;}
 
@@ -98,11 +100,16 @@ board
 board_view
 ************************/
 .board-list {display: flex; justify-content: flex-end; padding: 20px 0;}
-.board-list ~ .board-list {border-bottom: 1px solid #ddd;}
+.board-list ~ .board-list {border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;}
 .board-list > button {position: relative; font-size: 14px;}
 .board-list > button + button {margin-left: 20px;}
 .table-view thead th {border-bottom-color: #eaeaea;}
 .table-view tbody tr { border-bottom-color: #999;}
-.view-content {padding: 40px 0; border-bottom: 1px solid #ddd;}
-.list-button::before {display: inline-block; content: ''; width: 12px; height: 12px; border: 1px solid #888; border-radius: 2px; vertical-align: top; margin-right: 3px;}
-.list-button::after {display: block; content: ''; width: 8px; height: 1px; background-color: #888; position: absolute; top: 7px; left: 3px}
+.bbs-head {display: table; width: 100%; padding-bottom: 20px; border-bottom: 1px solid #ddd;}
+.bbs-head .date {display: table-cell; width: 12%; font-size: 15px; text-align: right; vertical-align: bottom;}
+.bbs-body {padding: 40px 0;}
+.bbs-attach {margin: 10px 0 30px;}
+.bbs-attach li {padding: 10px; background: #eee;}
+.bbs-attach li a {display: block; padding-left:20px; font-size: 12px; /* background-image: 첨부파일 이미지 넣어주기 */ }
+.list-button::before {display: inline-block; content: ''; width: 12px; height: 12px; border: 1px solid #888; border-radius: 2px; vertical-align: top; margin-top: 3px; margin-right: 3px;}
+.list-button::after {display: block; content: ''; width: 8px; height: 1px; background-color: #888; position: absolute; top: 9px; left: 3px}

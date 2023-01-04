@@ -7,13 +7,13 @@
     <title>푸르덴셜 공지사항</title>
     <link rel="stylesheet" href="../css/stlye-pru.css">
     <script src="../js/jquery.3.1.0.min.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="../js/main.js" defer></script>
 </head>
 <body>
     <section class="contents">
         <div class="inner">
             <div class="heading-wrap">
-                <h2 class="main-heading2">공지사항</h2>
+                <h1 class="main-heading2">공지사항</h1>
             </div>
             <div class="search-wrap">
                 <div class="total">총 <span>178</span>개</div>
@@ -35,13 +35,15 @@
                         <colgroup>
                             <col style="width:7%;">
                             <col style="width:auto;">
-                            <col style="width:14%;">
+                            <col style="width:12%;">
+                            <col style="width:12%;">
                             <col style="width:7%;">
                         </colgroup>
                         <thead>
                             <tr>
                                 <th>번호</th>
                                 <th>제목</th>
+                                <th>첨부파일</th>
                                 <th>등록일</th>
                                 <th>조회수</th>
                             </tr>
@@ -49,13 +51,18 @@
                         <tbody>
                             <tr>
                                 <td>123</td>
-                                <td><a href="#">시스템 안정화 작업 안내</a></td>
+                                <td>
+                                    <span class="state">공지사항</span>
+                                    <a href="#">시스템 안정화 작업 안내</a>
+                                </td>
+                                <td></td>
                                 <td>2022-12-31</td>
                                 <td>545</td>
                             </tr>
                             <tr>
                                 <td>1</td>
                                 <td><a href="#">정보보호시스템 점검 작업 안내 정보보호시스템 점검 작업 안내 정보보호시스템 점검 작업 안내 정보보호시스템 점검 작업 안내 정보보호시스템 점검 작업 안내 정보보호시스템 점검 작업 안내 정보보호시스템 점검 작업 안내</a></td>
+                                <td><button type="button">파일</button></td>
                                 <td>2022-01-01</td>
                                 <td>1234567</td>
                             </tr>
@@ -63,17 +70,17 @@
                     </table>
                     <nav class="paging">
                         <div class="paging-area">
-                            <button type="button" class="prev-button">이전 10개</button>
-                            <a href="/page-1" aria-current="true">1<span class="sr-only">페이지</span></a>
-                            <a href="/page-2">2<span class="sr-only">페이지</span></a>
-                            <a class="active" href="/page-3">3<span class="sr-only">페이지</span></a>
-                            <a href="/page-4">4<span class="sr-only">페이지</span></a>
-                            <a href="/page-5">5<span class="sr-only">페이지</span></a>
-                            <a href="/page-6">6<span class="sr-only">페이지</span></a>
-                            <a href="/page-7">7<span class="sr-only">페이지</span></a>
-                            <a href="/page-8">8<span class="sr-only">페이지</span></a>
-                            <a href="/page-9">9<span class="sr-only">페이지</span></a>
-                            <a href="/page-10">10<span class="sr-only">페이지</span></a>
+                            <button type="button" class="prev-button" disabled>이전 10개</button>
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <a class="active" href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#">6</a>
+                            <a href="#">7</a>
+                            <a href="#">8</a>
+                            <a href="#">9</a>
+                            <a href="#">10</a>
                             <button type="button" class="next-button">다음 10개</button>
                         </div>
                     </nav>

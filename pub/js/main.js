@@ -51,3 +51,20 @@ $(function() {
 		$('.check-choice:checked').length === ckLength ? $('#checkAll').prop('checked', true) : $('#checkAll').prop('checked', false)
 	})
 })
+
+/* board.html :: 공지사항 */
+/*
+ * 웹접근성을 위해 현재페이지 aira-current="true" , tabindex=-1
+*/
+if($('.paging').length) {
+	// const $pagingBtn = document.querySelectorAll('.paging a');
+	const $pagingBtn = $('.paging a');
+	
+	for(let i = 0; i < $pagingBtn.length; i++) {
+		if($pagingBtn[i].classList.contains('active')) {
+			$($pagingBtn[i]).attr({'aria-current': true, 'tabindex': -1});
+		} else {
+			$($pagingBtn[i]).removeAttr('aria-current tabindex');
+		}
+	}
+}
