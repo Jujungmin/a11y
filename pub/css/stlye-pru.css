@@ -112,4 +112,4 @@ board_view
 .bbs-attach li {padding: 10px; background: #eee;}
 .bbs-attach li a {display: block; padding-left:20px; font-size: 12px; /* background-image: 첨부파일 이미지 넣어주기 */ }
 .list-button::before {display: inline-block; content: ''; width: 12px; height: 12px; border: 1px solid #888; border-radius: 2px; vertical-align: top; margin-top: 3px; margin-right: 3px;}
-.list-button::after {display: block; content: ''; width: 8px; height: 1px; background-color: #888; position: absolute; top: 9px; left: 3px}
+.list-button::after {display: block; content: ''; width: 8px; height: 1px; background-color: #888; position: absolute; top: 9px; left: 3px;}

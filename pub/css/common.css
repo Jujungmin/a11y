@@ -1,0 +1,256 @@
+@charset "UTF-8";
+
+:root {
+    font-size: 10px;
+
+    --color-white: #fff;
+    --color-black: #000;
+    --color-gray1: #222;
+    --color-gray2: #666;
+
+    --color-point1: #715deb;
+    --color-point2: #445fe6;
+    
+    --fs-xs: 1.2rem;
+    --fs-sm: 1.3rem;
+    --fs-md: 1.4rem;
+    --fs-lg: 1.6rem;
+    --fs-xl: 1.8rem;
+}
+/* reset.css */
+body {padding:0; margin:0; font-size:var(--fs-md); color:var(--color-black); box-sizing:border-box;}
+h1, h2, h3, h4, h5, h6 {margin:0; font-size:initial; font-weight:500;}
+a {color:inherit; text-decoration: none;}
+ul, ol {list-style:none; padding:0; margin:0;}
+input[type="checkbox"] {
+    -webkit-appearance: inherit !important;
+    appearance: inherit !important;
+}
+
+/* .wrapper {min-width:1220px; overflow-x:hidden;} */
+/* resize 시 스크롤이 안생김 */
+.pc-block {display:block !important;}
+.mo-block {display:none !important;}
+@media all and (max-width: 768px) {
+    .pc-block {display:none !important;}
+    .mo-block {display:block !important;}
+}
+.pointC1 {color:var(--color-point1) !important;}
+.pointC2 {color:var(--color-point2) !important;}
+/* https://css-tricks.com/comparing-various-ways-to-hide-things-in-css/#:~:text=If%20an%20element%E2%80%99s%20visibility%20property%20is%20set%20to,the%20element%20is%20generated%20and%20rendered%2C%20but%20invisible. */
+.visuallyHidden:not(:focus):not(:active) {width:1px; height:1px; clip:rect(0 0 0 0);/* IE6,IE7 */ clip-path:inset(50%); /* 최신 브라우저 */ position:absolute; white-space:nowrap; overflow:hidden;}
+
+.blind {display: inline-block; position: absolute !important; width: 1px; height: 1px; margin: -1px; border: 0; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%);}
+
+body {height:100%; /* overflow-x:hidden; */}
+.skipnavi a {display:block; width:100%; height:0; position:fixed; top:0; left:0; text-align:center; background-color:#445fe6; color:#fff; overflow:hidden; z-index:999;}
+.skipnavi a:focus,
+.skipnavi a:active {height:auto; padding:10px 0; border:2px dashed #fff;} /* 스크립트로 굳이 처리안해도 됨. */
+
+/**** header ****/
+header .util-wrap {width:1136px; margin:0 auto;}
+header .logo {position:absolute; top:62px; z-index:10;}
+header .util {padding:15px 0; font-size:0; text-align:right; box-sizing:border-box;}
+header .util a {position:relative; margin:0 15px; font-size:var(--fs-xs);}
+header .util a:last-of-type {margin-right:0px;}
+header .util a:not(:first-of-type)::before {content:''; width:1px; height:80%; background-color:#999; position:absolute; top:2px; left:-15px;}
+header .gnb {height:50px; margin:0 auto; position:relative; background-color:transparent;}
+.gnb .gnb-wrap {width:1136px; margin:0 auto; position:relative; height:100%;}
+.gnb-wrap::after {content:''; display:block; width:100%; height:1px; position:absolute; bottom:0; background:#d8d8d8;}
+.gnb .depth01 {display:flex; justify-content:center; padding:0 100px 0 45px; height:100%; box-sizing:border-box;}
+.gnb .depth01 > li {display:table; padding:0 10px;}
+.gnb .depth01 > li > a {display:table-cell; padding:0 10px; vertical-align:middle;}
+.depth01 .depth-wrap {display:none; position:absolute; top:50px; left:0; right:0; background-color:ivory;}
+.depth01 .depth-wrap::before {content:''; display:block; position:absolute; top:0; left:-100%; width:100%; height:100%; background-color:ivory;}
+.depth01 .depth-wrap::after {content:''; display:block; position:absolute; top:0; right:-100%; width:100%; height:100%; background-color:ivory;}
+.gnb .depth02 {padding:20px 0; box-sizing:border-box;}
+.gnb .depth02 > li {display:inline-block; width:19%; vertical-align:top;}
+.gnb .depth02 > li > a {display:inline-block; margin:10px 0 7px; font-weight:bold;}
+.gnb .depth02 > li:first-child:last-child {width:100%; text-align:center;}
+.gnb .depth02 > li:nth-child(n+6) {margin-top:15px;}
+.gnb .depth03 > li {margin-bottom:7px;}
+.gnb .depth03 > li > a {display:inline-block; position:relative;}
+.gnb .depth03 > li > a::after {content:''; display:block; width:0; height:2px; background-color:var(--color-point1); transition:all 0.3s ease;}
+/* .gnb .depth03 > li > a:hover {color:var(--color-point2);} */
+/* .gnb .depth03 > li > a:hover::after {width:100%;} */
+.gnb .utilapp {position:absolute; top:14px; right:0;}
+.gnb .utilapp > button {height:100%;}
+.gnb .utilapp > button:not(:first-of-type) {margin-left:20px;}
+button {display:inline-block; padding:0; margin:0; vertical-align:top; border:0; background:transparent; cursor:pointer;}
+
+/* 검색어입력 */
+header .search {display:none; position:absolute; width:100%;}
+.search .search-wrap {padding:60px 0; background:var(--color-point1);}
+.search-wrap .search-box {width:450px; height:48px; margin:auto; position:relative;}
+.search-box .ipt-text{padding:0px 84px 7px 10px; border-bottom:2px solid #fff; box-sizing:border-box;}
+.search-box .ipt-text::placeholder {color:#fff; opacity:1;}
+.search-box .ipt-text:-ms-input-placeholder {color:#fff;}
+.ipt-text{width:100%; height:100%; border:0; background:transparent;}
+.search-box .delete-icon {width:20px; height:20px; position:absolute; right:52px; bottom:17px; background:#4e3ad4; border-radius:50%;}
+/* x아이콘만들기 */
+.search-box .delete-icon::after {content:''; display:block; width:1px; height:11px; position:absolute; top:50%; left:50%; background:#fff; transform:translate(-50%,-50%)rotate(-45deg);}
+.search-box .delete-icon::before {content:''; display:block; width:1px; height:11px; position:absolute; top:50%; left:50%; background:#fff; transform:translate(-50%,-50%)rotate(45deg);}
+.search-box .search-icon {width:40px; height:40px; position:absolute; right:0; bottom:10px;}
+.search-box .search-icon::before {content:''; display:block; width:24px; height:24px; border-radius:50%; background:transparent; border:4px solid #fff;}
+.search-box .search-icon::after {content:''; display:block; width:4px; height:10px; position:absolute; right:0; bottom:0; transform:rotate(-45deg); transform-origin: -3px 10px; background:#fff;}
+.keyword {margin-top:30px; text-align:center;}
+.keyword .hashtag {display:inline-block; padding:0 12px; height:30px; line-height:30px; background:#4e3ad4; color:#fff; border-radius:20px;}
+.keyword .hashtag::before {content:'# '; color:#fff; opacity:.7;}
+.search .result {background:#fff; border-bottom:1px solid #ddd;}
+.result .result-wrap {display:flex; flex-direction:row; width:944px; height:455px; margin:auto;}
+.result-wrap .recomm {flex-basis:55%;}
+.result-wrap h2.tit {padding:30px 0 20px; font-weight:bold;}
+/* .result-wrap h2.tit > span {color:var(--color-point2);} */ /* 포인트지정클래스를 넣는다. */
+.recomm .recomm-list {display:flex; flex-wrap:wrap; position:relative;}
+.recomm .recomm-list::after {content:''; display:block; width:1px; height:100%; background:#999; position:absolute; top:0; left:50%;}
+.recomm .recomm-list li {flex-basis:50%; padding-right:20px; margin:5px 0; position:relative; box-sizing:border-box;}
+.recomm .recomm-list li:nth-of-type(even) {padding-left:20px; padding-right:0;}
+.recomm .recomm-list strong {color:#445fe6;}
+.recomm .total {position:relative; margin-top:40px;}
+.total .total-list li {padding-left:10px; margin-bottom:10px; position:relative;}
+.total .total-list li::before {content:''; display:block; width:3px; height:3px; position:absolute; top:50%; transform:translateX(-50%); left:0; background:#999; border-radius:50%;}
+.total-list li a {display:block;}
+.total-list li .cate {display:block; overflow:hidden;}
+.total-list .cate > span {display:inline-block; margin-right:14px; position:relative;}
+/* 꺽쇠를 오른쪽이 아닌 왼쪽으로 넣은 이유 : 마지막 태그에 꺽쇠없애는 스타일 추가해야되므로 코드를 줄이기 위해 hidden추가. */
+.total-list .cate > span::after {content:''; display:block; width:5px; height:5px; border:1px solid #999; border-width:0 1px 1px 0; position:absolute; top:6px; left:-14px; transform:rotate(-45deg);}
+.total-list .cate span > strong {color:#445fe6;}
+.total .more-btn {position:absolute; top:30px; right:0;}
+.more-btn {display:inline-block; padding-right:14px; position:relative;}
+.more-btn::after {content:''; display:block; width:8px; height:8px; border:1px solid #445fe6; border-width:0 1px 1px 0; position:absolute; top:4px; right:0; transform:rotate(-45deg);}
+.search .close-icon {width:40px; height:40px; position:absolute; top:20px; left:50%; margin-left:528px;} /* (1136/2)-40 :: 마진을 써주면 아이콘 고정할 수 있다. */
+.search .close-icon::after {content:''; display:block; width:2px; height:100%; position:absolute; top:50%; left:50%; background: #fff; transform: translate(-50%,-50%) rotate(-45deg);}
+.search .close-icon::before {content:''; display:block; width:2px; height:100%; position:absolute; top:50%; left:50%; background: #fff; transform: translate(-50%,-50%) rotate(45deg);}
+.result-wrap .event {flex-basis:35%; padding-left:10px; padding-right:10px; margin-left:auto; background: #ddd; overflow:hidden;}
+/* header .crumb {background:#fff; border-bottom: 1px solid #ddd;} */
+.crumb .inner {width:1136px; margin:auto;}
+.crumb .crumb-list {display:inline-flex; flex-direction:row;}
+.crumb-list > li > button {display:block; padding: 20px 30px 20px 0; position:relative;}
+.crumb-list > li> button::after {content:''; display:block; width:5px; height:5px; margin-top:0; position:absolute; top:50%; right:15px; border:1px solid #888; border-width:1px 1px 0px 0px; transform:translateY(-50%) rotate(45deg); transition:all .3s;}
+.crumb-list > li > button:hover::after,
+.crumb-list > li > button:focus::after,
+.crumb-list > li > button:active::after {margin-top:-4px; transform:rotate(135deg);}
+.crumb-list > li > button:hover + .crumb-sibling {display:block;}
+.crumb-list .crumb-sibling {display:none; min-width:195px; padding:13px 20px; position:absolute; background:#fff; border:1px solid #ddd; box-sizing:border-box; z-index:1;}
+.crumb-list .crumb-sibling > li {padding:5px 0;}
+.crumb-list .crumb-sibling > li > a {display:block;}
+.crumb-list .crumb-sibling > li > a:hover,
+.crumb-list .crumb-sibling > li > a:focus,
+.crumb-list .crumb-sibling > li > a:active {text-decoration:underline;}
+.crumb .acc {padding-top:8px; float:right; display:flex;}
+.crumb .acc > div {position:relative;}
+.crumb .acc > div:not(:first-of-type) {margin-left:20px;}
+.acc button > span {width:1px; height:1px; clip:rect(0 0 0 0 0); clip-path:inset(50%); position:absolute; white-space:nowrap; overflow:hidden;}
+.acc .zoomin-area .zoomin-icon {width:32px; height:32px; position:relative;}
+.acc .share-area .share-icon {width:32px; height:32px; position:relative;}
+.zoomin-area .acc-tooltip {display:none; width:290px; padding:12px; background:#fff; border:1px solid #ddd; position:absolute; right:0; box-sizing:border-box; z-index:9;}
+.zoomin-area .acc-tooltip span {display:inline-block; padding:0px 5px; background:#445fe6; color:#fff; border-radius:5px;}
+.share-area .acc-tooltip {display:none; padding:12px; white-space:nowrap; background:#fff; border:1px solid #ddd; position:absolute; right:0; box-sizing:border-box; z-index:9;}
+.share-area .acc-tooltip .kakao-icon {width:32px; height:32px; border-radius:10px; background:gold;}
+.share-area .acc-tooltip .url-icon {width:32px; height:32px; border-radius:10px; background:gray;}
+.share-area .acc-tooltip button:not(:first-of-type) {margin-left:10px;}
+/* allmenu */
+header .allmenu {display:none; position:fixed; top:0; right:0; bottom:0; left:0; background:#fff; overflow:auto; z-index:999;}
+.allmenu .topwrap {position:sticky; top:0; background:#715deb; z-index:1;}
+.topwrap .inner {width:1136px; margin:0 auto; padding:40px 0 60px;}
+.allmenu .logo {float:left; top:20px; color:#fff;}
+.allmenu .util {padding:0;}
+.allmenu .util a {padding-right:15px; margin:0 0 0 20px; color:#fff;}
+.allmenu .util .arrow-icon::after{content:''; width:7px; height:7px; border:1px solid #fff; border-width:1px 1px 0 0; position:absolute; top:2px; right:-2px;}
+.allmenu .util .arrow-icon::before{content:''; width:1px; height:17px; position:absolute; top:0; right:4px; left:auto; background:#fff; transform:rotate(45deg);}
+.allmenu .input-box {width:320px; margin:30px auto 0; position:relative;}
+.allmenu .input-box .ipt-text{width:100%; height:45px; padding:0 73px 0 5px; color:#fff; border-bottom:2px solid #fff; box-sizing:border-box;}
+.allmenu .input-box .ipt-text::placeholder {color:#fff;}
+.allmenu .delete-icon {display:block; width:20px; height:20px; border-radius:50%; background:#4e3ad4; position:absolute; top:8px; right:50px;}
+.allmenu .delete-icon::before {content:''; display:block; width:1px; height:12px; background:#fff; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%) rotate(-45deg);}
+.allmenu .delete-icon::after {content:''; display:block; width:1px; height:12px; background:#fff; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%) rotate(45deg);}
+.allmenu .search-icon {display:block; width:40px; height:40px; position:absolute; top:0px; right:0;}
+.allmenu .search-icon::before {content:''; display:block; width:23px; height:23px; border-radius:50%; background:transparent; border:2px solid #fff; position:absolute; top:3px;}
+.allmenu .search-icon::after {content:''; display:block; width:2px; height:7px; background:#fff; position:absolute; right:15px; bottom:7px; transform:rotate(-45deg);}
+.topwrap .menu-title {background:#fff; border-bottom:1px solid #ddd;}
+.topwrap .menu-title ul {display:flex; width:1136px;margin:auto;}
+.topwrap .menu-title li {flex-grow:1;}
+.topwrap .menu-title li a {display:block; padding:16px 0;}
+.allmenu .menu-list {max-width:1136px; padding:0 80px; margin:auto; box-sizing:border-box;}
+.menu-list .list {display:flex; flex-direction:row; padding:50px 0; border-bottom:1px solid #ddd;}
+.menu-list .list h2 {flex-basis:30%; position:relative; font-size:17px; font-weight:bold;}
+.menu-list .list h2 > a > span:first-of-type {display:block; padding-bottom:5px;}
+.menu-list .list .depth {flex-basis:70%;}
+.menu-list .depth h3 {padding:13px 0; font-size:15px; font-weight:bold; border-bottom:1px solid #ddd;}
+.menu-list .depth h3 a {display:block;}
+.menu-list .depth ul {display:flex; flex-direction:row; flex-wrap:wrap; margin-bottom:40px;}
+.menu-list .depth ul li {flex:0 1 33.33%; padding-top:15px;}
+.menu-list .list .more-btn {padding-right:12px; font-size:13px; color:#445fe6; font-weight:normal;}
+.menu-list .list .more-btn::after {width:6px; height:6px; top:6px;}
+.allmenu .close-btn {width:40px; height:40px; position:fixed; top:33px; right:50px; z-index:1;}
+.allmenu .close-btn::before {content:''; width:2px; height:100%; position:absolute; top:50%; left:50%; background:#fff; transform:translate(-50%,-50%) rotate(45deg);}
+.allmenu .close-btn::after {content:''; width:2px; height:100%; position:absolute; top:50%; left:50%; background:#fff; transform:translate(-50%,-50%) rotate(-45deg);}
+
+/**** footer ****/
+footer {position:relative; bottom:0;}
+.footernav {position:relative; background:#fff; border-top:1px solid #ddd;}
+.footernav::before {content:''; width:100%; height:50px; position:absolute; bottom:0; background:#f9f9f9; border:1px solid #ddd; border-width:1px 0;}
+.footernav .inner {width:1136px; margin:auto;}
+.footernav .inner > ul {display:table; width:100%; height:100%; position:relative; border-left:1px solid #ddd;}
+.footernav .inner > ul > li {display:table-cell; padding-bottom:50px; position:relative; border-right:1px solid #ddd;}
+.footernav ul > li > button {padding:0 40px 0 25px; width:100%; height:50px; position:absolute; bottom:0; text-align:left;}
+.footernav ul > li > button::after {content:''; width:5px; height:5px; border:1px solid #222; border-width:1px 1px 0 0; position:absolute; top:50%; right:20px; transform:translateY(-50%) rotate(-45deg);}
+.footernav .depth {display:none; padding:20px 15px; position:relative;}
+.footernav .depth > li {display:table; padding:7px 10px;}
+footer .company-wrap {display:flex; flex-direction:row; width:1136px; margin:auto;}
+.company-wrap .info-area {flex:1 0 83%; padding:30px 0 20px;}
+.info-area .info-logo img {width:120px; height:auto; vertical-align:top;}
+.company-wrap .link-group {margin-top:15px; overflow:hidden;}
+.company-wrap .link-group > a {display:inline-block; margin-right:15px; position:relative;}
+.company-wrap .link-group > a::before {content:''; width:3px; height:3px; border-radius:50%; background:#666; position:absolute; top:8px; left:-10px;}
+.company-wrap .phone-group {display:flex; flex-direction:row; flex-wrap:wrap; margin-top:15px; overflow:hidden;}
+.phone-group > span {padding-right:20px; position:relative; font-weight:bold;}
+.phone-group span::after {content:''; width:1px; height:85%; position:absolute; top:3px; left:-10px; background:#ddd;}
+.company-wrap address {margin-top:10px; overflow:hidden;}
+.company-wrap address span {padding-right:15px; position:relative; font-size:13px; font-style:normal;}
+.company-wrap address span::after {content:''; width:1px; height:80%; position:absolute; top:3px; left:-10px; background:#ddd;}
+
+.related-info .group-select {position:relative;}
+.related-info {position:relative;  width:160px; margin-top:50px;}
+.related-info .select-lable {display:block; height:34px; line-height:34px; border-bottom:2px solid #222; background:#fff;}
+.related-info .select-lable::after {content:''; width:10px; height:10px; border:solid #222; border-width:2px 0px 0 2px; position:absolute; top:13px; right:10px; transform:rotate(45deg); transition:all .3s;}
+.related-info .select-btn:checked + .select-lable::after {top:9px; transform:rotate(-135deg);}
+.related-info .select-btn {width:100%; height:100%; margin:0; padding:0; position:absolute; top:0; left:0; opacity:1; box-sizing:border-box;}
+.related-info .select-btn:checked ~ .select-list {display:block;}
+.related-info .select-list {display:none; width:340px; padding:20px; position:absolute; right:0; bottom:40px; background:#fff; border: 1px solid #ddd;}
+.related-info .select-list li {display:inline-block; padding:4px 5px; width:48%; box-sizing:border-box;}
+.related-info .awards {display:flex; justify-content:flex-end; margin-top:20px;}
+.related-info .awards a {display:block; flex:0 0 35px; height:26px; margin-left:10px; white-space:nowrap; background:#f1f1f1; overflow:hidden;}
+
+
+/******
+- 신한라이프 aria보기
+input 텍스트 넣고 전체지우기가 왜 tabindex=-1인지,
+그럼 포커스필요없으니깐 전체화면 읽을 때 필요없는거아닌감.. aria-hidden=true추가 해야되는지.
+※주의: aria-hidden=true 는 포커스 받을 수 있는 요소에는 사용하면 안된다.
+자식에 의해 상속되므로 포커스가 가능한 부모 또는 상위 항목에 추가하면 포커스가 걸리지 않으므로 주의해야 한다.
+
+button padding 으로 높이 정하기 => 한줄이상
+button height, line-height로 높이 정하기 => 한줄처리
+헷갈릴때는 a, button 태그 번갈아가면서 넣어보기.
+
+after,before에서 bg로 left,right:-100% 사용할 때 overflow:hidden해야 가려진다.(스크롤생기지않음)
+!!사용 지양하기!! 왠만헤서 쓰지 않는게 좋고 사용할때 overflow를 생각하자!
+
+******/
+
+/************************
+popup
+************************/
+.col_11 {width: 1040px;}
+.popwrap {display:block; position: fixed; top: 0; right:0; bottom: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); opacity: 1; overflow: hidden; z-index: 9999;}
+.popup {display: table; position: relative; width: 100%; height: 100%; margin: 0 auto; overflow: hidden;}
+.popcontain {display: table-cell; position: relative; width: 100%; vertical-align: middle;}
+.popcont {padding: 60px 0 26px; margin: 0 auto; position: relative; background:#fff;}
+.pophead {display: table; width: 100%; height: 60px; position: absolute; top: 0; left: 0; padding: 0 100px 0 32px; border-bottom: 1px solid #ddd; box-sizing: border-box;}
+.pophead h1 {display: table-cell; vertical-align: middle; font-size: 20px; font-weight: bold; line-height: 1;}
+.popbody {position: relative; max-height: calc(100vh - 214px); padding: 0 32px; overflow-x: hidden; overflow-y: auto;}
+.popbody section {margin: 24px 0;}
+.popup .close-btn {display:block; position: absolute; top: 16px; right: 26px; width: 24px; height: 24px;}
+.popup .close-btn::after {display: block; content: ''; width:2px; height: 100%; background: #222; position: absolute; top: 0; left: 50%; transform: translate(-50%,0) rotate(45deg);}
+.popup .close-btn::before {display: block; content: ''; width:2px; height: 100%; background: #222; position: absolute; top: 0; left: 50%; transform: translate(-50%,0) rotate(-45deg);}

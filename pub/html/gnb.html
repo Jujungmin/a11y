@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>gnb PC/MO</title>
+	<link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+<!-- text-indent는 쓰면 텍스트가 가려지므로 사용 지양 -->
+<!-- depth02 여섯개일때는 아래로 떨어짐 -->
+<div class="skipnavi">
+	<a href="#contents">본문 바로가기</a>
+	<a href="#gnb">주메뉴 바로가기</a>
+</div>
+
+<div class="wrapper">
+	<!-- S : PC gnb -->
+	<header>
+		<nav class="util-wrap" aria-label="관련 사이트">
+			<!-- [+]skipNav 후 로고가 먼저 포커스잡혀야 됨 -->
+			<!-- [!+]로고가 h1일 필요는 없다. -->
+			<a href="/" class="logo" aria-label="신한라이프">LOGO</a>
+			<div class="util">
+				<a href="#"><span>로그인</span></a>
+				<a href="#"><span>공시실</span></a>
+				<a href="#"><span>회사소개</span></a>
+				<a href="#"><span>디지털보험</span></a>
+			</div>
+		</nav>
+		<nav class="gnb" id="gnb" aria-label="메인"><!-- [!]nav태그에 role=navigation추가 할 필요는 없음. 중복읽힘 -->
+			<div class="gnb-wrap">
+				<ul class="depth01">
+					<li>
+						<a href="#"><span>사이버창구</span></a>
+						<div class="depth-wrap">
+							<ul class="depth02">
+								<li>
+									<a href="#">보험계약조회</a>
+									<ul class="depth03">
+										<li><a href="#">보험계약조회</a></li>
+										<li><a href="#">변액보험계약조회</a></li>
+										<li><a href="#">보험거래내역</a></li>
+										<li><a href="#">금리연동형공시실</a></li>
+										<li><a href="#">연금저축보험공시실</a></li>
+										<li><a href="#">연금예상액조회</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">보험계약변경</a>
+									<ul class="depth03">
+										<li><a href="#">펀드변경/자동재배분</a></li>
+										<li><a href="#">펀드변경/자동재배분내역</a></li>
+										<li><a href="#">감액/특약해지(해약)</a></li>
+										<li><a href="#">연금정보변경</a></li>
+										<li><a href="#">보험계약변경내역</a></li>
+										<li><a href="#">갱신변경</a></li>
+										<li><a href="#">청약철회신청/취소</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">사고보험금</a>
+									<ul class="depth03">
+										<li><a href="#">사고보험금 안내/접수</a></li>
+										<li><a href="#">사고보험금 예상조회</a></li>
+										<li><a href="#">사고보험금 처리현황</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">일반보험금</a>
+									<ul class="depth03">
+										<li><a href="#">분할보험금신청</a></li>
+										<li><a href="#">배당금신청</a></li>
+										<li><a href="#">만기보험금신청</a></li>
+										<li><a href="#">해지환급금신청</a></li>
+										<li><a href="#">휴면보험금신청</a></li>
+										<li><a href="#">중도인출신청</a></li>
+										<li><a href="#">신청결과확인</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">보험료납입</a>
+									<ul class="depth03">
+										<li><a href="#">자유/추가납입</a></li>
+										<li><a href="#">자유/추가납입 정기이체</a></li>
+										<li><a href="#">달러보험 원화고정납입금액변경</a></li>
+										<li><a href="#">납입신청결과확인</a></li>
+										<li><a href="#">계약사항변경</a></li>
+										<li><a href="#">신청내역 확인</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">대출</a>
+									<ul class="depth03">
+										<li><a href="#">보험계약대출현황</a></li>
+										<li><a href="#">보험계약대출신청</a></li>
+										<li><a href="#">보험계약대출신청내역</a></li>
+										<li><a href="#">보험계약대출상환</a></li>
+										<li><a href="#">보험계약대출분할상환</a></li>
+										<li><a href="#">개인대출현황</a></li>
+										<li><a href="#">신용대출신청</a></li>
+										<li><a href="#">개인대출상환</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">고객정보관리</a>
+									<ul class="depth03">
+										<li><a href="#">내정보관리</a></li>
+										<li><a href="#">My Tops Club</a></li>
+										<li><a href="#">마케팅동의/철회</a></li>
+										<li><a href="#">내 계좌관리</a></li>
+										<li><a href="#">내 계약관리</a></li>
+										<li><a href="#">안내장발송내역조회</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">증명서발급</a>
+									<ul class="depth03">
+										<li><a href="#">보험료납입증명서</a></li>
+										<li><a href="#">대출증명서</a></li>
+										<li><a href="#">사고보험금 지급내역서</a></li>
+										<li><a href="#">증권재발행</a></li>
+										<li><a href="#">해지환급금신청</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">고객지원/보안</a>
+									<ul class="depth03">
+										<li><a href="#">신한라이프/보안카드</a></li>
+										<li><a href="#">공동인증서관리</a></li>
+										<li><a href="#">금융인증서관리</a></li>
+										<li><a href="#">타기관OTP관리</a></li>
+										<li><a href="#">이용가이드</a></li>
+										<li><a href="#">녹취신청</a></li>
+										<li><a href="#">설치프로그램 안내</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#"><span>보험상품</span></a>
+						<div class="depth-wrap">
+							<ul class="depth02">
+								<li><a href="#">보험상품 자세히 알아보기</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#"><span>금융상품</span></a>
+						<div class="depth-wrap">
+							<ul class="depth02">
+								<li><a href="#">대출</a></li>
+								<li><a href="#">보험계약대출</a></li>
+								<li><a href="#">보험계약자신용대출</a></li>
+								<li><a href="#">아파트담보대출</a></li>
+								<li>
+									<a href="#">퇴직연금</a>
+									<ul class="depth03">
+										<li><a href="#">제도안내</a></li>
+										<li><a href="#">상품안내</a></li>
+										<li><a href="#">자산운용가이드</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">펀드</a>
+									<ul class="depth03">
+										<li><a href="#">상품안내</a></li>
+										<li><a href="#">매매안내</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#"><span>혜택</span></a>
+						<div class="depth-wrap">
+							<ul class="depth02">
+								<li>
+									<a href="#">라이프 온</a>
+									<ul class="depth03">
+										<li><a href="#">따뜻한 행복 서비스</a></li>
+										<li><a href="#">라이프 온 노트</a></li>
+										<li><a href="#">종합건강검진 우대서비스</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Wealth Management</a>
+									<ul class="depth03">
+										<li><a href="#">WM서비스안내</a></li>
+										<li><a href="#">WM센터 서비스</a></li>
+										<li><a href="#">WM고객 프로그램</a></li>
+										<li><a href="#">상속증여연구소 전문콘텐츠</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Tops Club</a>
+									<ul class="depth03">
+										<li><a href="#">신한플러스안내</a></li>
+										<li><a href="#">신한플러스 멤버십 등급안내</a></li>
+										<li><a href="#">가족합산제도</a></li>
+										<li><a href="#">Tops 등급 안내</a></li>
+										<li><a href="#">Tops 서비스</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">생활서비스</a>
+									<ul class="depth03">
+										<li><a href="#">운세/사주</a></li>
+										<li><a href="#">건강정보서비스</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">이벤트</a>
+									<ul class="depth03">
+										<li><a href="#">진행중인 이벤트</a></li>
+										<li><a href="#">지난 이벤트</a></li>
+										<li><a href="#">신한's 이벤트</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#"><span>헬프데스크</span></a>
+						<div class="depth-wrap">
+							<ul class="depth02">
+								<li><a href="#">FAO</a></li>
+								<li>
+									<a href="#">구비서류 안내</a>
+									<ul class="depth03">
+										<li><a href="#">사고보험금 청구</a></li>
+										<li><a href="#">제지급금 청구</a></li>
+										<li><a href="#">보험계약 변경</a></li>
+										<li><a href="#">양식다운로드</a></li>
+									</ul>
+								</li>
+								<li><a href="#">계약고객 서비스</a></li>
+								<li>
+									<a href="#">지점 및 업무 안내</a>
+									<ul class="depth03">
+										<li><a href="#">지점찾기</a></li>
+										<li><a href="#">업무채널 안내</a></li>
+										<li><a href="#">모바일서비스 안내</a></li>
+									</ul>
+								</li>
+								<li><a href="#">공지사항</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#"><span>소비자포털</span></a>
+						<div class="depth-wrap">
+							<ul class="depth02">
+								<li>
+									<a href="#">고객의소리</a>
+									<ul class="depth03">
+										<li><a href="#">고객의 소리 접수</a></li>
+										<li><a href="#">나의 접수내역</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">소비자보호체계</a>
+									<ul class="depth03">
+										<li><a href="#">금융소비자보호헌장</a></li>
+										<li><a href="#">소비자보호조직도</a></li>
+										<li><a href="#">민원처리프로세스</a></li>
+										<li><a href="#">상품개발프로세스</a></li>
+										<li><a href="#">금융소비자보호내부통제규정</a></li>
+										<li><a href="#">금융소비자보호업무규정</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">소비자보호공시</a>
+									<ul class="depth03">
+										<li><a href="#">민원건수공시</a></li>
+										<li><a href="#">금융소비자보호 실태평가결과공시</a></li>
+									</ul>
+								</li>
+								<li><a href="#">소비자보호우수사례</a></li>
+								<li>
+									<a href="#">유용한소비자보호정보</a>
+									<ul class="depth03">
+										<li><a href="#">유용한 소비자정보</a></li>
+										<li><a href="#">보험 분쟁조정사례 및 판례</a></li>
+										<li><a href="#">금융사기 관련 유의사항</a></li>
+									</ul>
+								</li>
+								<li><a href="#">유용한사이트</a></li>
+							</ul>
+							<span class="gnbbar"></span>
+						</div>
+					</li>
+				</ul>
+				<div class="utilapp">
+					<button type="button" class="search-icon" aria-label="검색" aria-controls="search">검색</button>
+					<button type="button" class="allmenu-icon" aria-label="전체메뉴" aria-controls="allmenu">메뉴</button>
+				</div>
+			</div>
+		</nav>
+		<div class="search" id="search" role="search">
+			<div class="search-wrap">
+				<div class="search-box">
+					<input type="text" class="ipt-text" aria-label="검색어 입력" title="검색어 입력" placeholder="검색어를 입력해주세요.">
+					<button type="button" class="delete-icon" aria-label="검색어 모두 지우기" tabindex="-1"></button><!-- [+]검색어모두지우기는 읽힐 필요가 없음. -->
+					<button type="button" class="search-icon" aria-label="검색"></button>
+				</div>
+				<div class="keyword">
+					<a href="#" class="hashtag">운세</a>
+					<a href="#" class="hashtag">보험금청구</a>
+					<a href="#" class="hashtag">해지</a>
+					<a href="#" class="hashtag">사주</a>
+					<a href="#" class="hashtag">구비서류</a>
+				</div>
+			</div>
+			<div class="result">
+				<div class="result-wrap">
+					<div class="recomm">
+						<h2 class="tit">검색어 자동추천</h2><!-- [+]h2로 수정(strong으로 함) -->
+						<ul class="recomm-list">
+							<li><a href="#"><strong>보험</strong></a></li>
+							<li><a href="#"><strong>보험</strong>거래내역</a></li>
+							<li><a href="#"><strong>보험</strong>계약</a></li>
+							<li><a href="#"><strong>보험</strong></a></li>
+							<li><a href="#"><strong>보험</strong>거래내역</a></li>
+							<li><a href="#"><strong>보험</strong>계약</a></li>
+						</ul>
+						<div class="total">
+							<h2 class="tit">메뉴(총 <span class="pointC2">0</span>건)</h2><!-- [+]h2로 수정(strong으로 함) -->
+							<ul class="total-list">
+								<!-- [+] 따로 분리해줘야 됨(a태그로 모두 묶음) -->
+								<!-- [!] a태그에 margin넣으면 마진합병일어남 li태그 추가 -->
+								<li>
+									<a href="#">
+										<span class="cate">
+											<span>홈페이지</span>
+											<span>사이버창구</span>
+											<span><strong>보험</strong>계약조회</span>
+											<span><strong>보험</strong>계약조회</span>
+										</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="cate">
+											<span>홈페이지</span>
+											<span>소비자포털</span>
+											<span>유용한소비자보호정보</span>
+											<span><strong>보험</strong> 분쟁조정사례 및 판례</span>
+										</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="cate">
+											<span>홈페이지</span>
+											<span>금융상품</span>
+											<span>대출</span>
+											<span><strong>보험</strong>계약자신용대출</span>
+										</span>
+									</a>
+								</li>
+							</ul>
+							<a href="#" class="more-btn pointC2">메뉴 더보기</a>
+						</div>
+					</div>
+					<div class="event">
+						<h2 class="tit">추천 상품 & 이벤트</h2><!-- [+]h2로 수정(strong으로 함) -->
+						<div class="slider">
+							<div class="pagination">
+								<button type="button" class="paging-btn" aria-label="첫번째 슬라이드">1</button>
+								<button type="button" class="paging-btn" aria-label="두번째 슬라이드">2</button>
+								<button type="button" class="paging-control" aria-label="실행 및 정지"></button>
+							</div>
+							<ul class="slide">
+								<li><a href="#"><span class="reco-badge">추천</span><span class="new-badge">신상품</span>신한 3COLOR 3대질병 보장보험(무배당, 갱신형)</a></li>
+								<li><a href="#"><span class="reco-badge">추천</span><span class="new-badge">신상품</span>신한 3COLOR 3대질병 보장보험(무배당, 갱신형)</a></li>
+							</ul>
+						</div>
+						<img src="/" alt="이벤트페이지">
+					</div>
+				</div>
+			</div>
+			<button type="button" class="close-icon" aria-label="닫기"></button><!-- 닫기버튼은 포커스 마지막으로 놓기 -->
+		</div>
+		<div class="crumb">
+			<div class="inner">
+				<ol class="crumb-list" aria-label="메뉴 경로">
+					<li class="home"><button type="button"><span>홈</span></button></li>
+					<li>
+						<button type="button">
+							라이프에 놀라움을 더하다, 신한라이프
+							<span class="visuallyHidden">펼치기</span>
+						</button>
+						<ul class="crumb-sibling">
+							<li><a href="#">사이버창구</a></li>
+							<li><a href="#">보험상품</a></li>
+							<li><a href="#">금융상품</a></li>
+							<li><a href="#">혜택</a></li>
+							<li><a href="#">헬프데스크</a></li>
+							<li><a href="#">소비자포털</a></li>
+							<li><a href="#">공시실</a></li>
+							<li><a href="#">회사소개</a></li>
+						</ul>
+					</li>
+				</ol>
+				<div class="acc">
+					<div class="zoomin-area">
+						<button type="button" class="zoomin-icon" aria-label="화면확대 및 축소">aA</button>
+						<div class="acc-tooltip">
+							키보드 <span>Ctrl</span> 버튼과 <span>+</span> <span>-</span> 버튼 또는 마우스 휠을 '상하'로 움직이면 화면 '확대' 또는 '축소'가 됩니다.
+						</div>
+					</div>
+					<div class="share-area"><!-- aria-label 하위 읽는지 체크!!!! -->
+						<button type="button" class="share-icon" aria-label="공유하기">공유</button>
+						<div class="acc-tooltip">
+							<button type="button" class="kakao-icon" aria-label="카카오톡 공유하기"><span></span></button>
+							<button type="button" class="url-icon" aria-label="url 공유하기"><span>url공유하기</span></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- PC&MO GNB -->
+		<div class="allmenu" id="allmenu" role="navigation" aria-label="전체메뉴">
+			<div class="topwrap">
+				<div class="inner">
+					<a href="/" class="logo pc-block" aria-label="신한라이프">LOGO</a>
+					<nav class="util" aria-label="관련 사이트">
+						<a href="#" target="_blank" class="arrow-icon">공시실</a>
+						<a href="#" target="_blank" class="arrow-icon">회사소개</a>
+						<a href="#" target="_blank" class="arrow-icon mo-block">사이버창구</a>
+						<a href="#" target="_blank" class="arrow-icon">디지털보험</a>
+					</nav>
+					<div class="input-box">
+						<input type="text" class="ipt-text" title="메뉴명 입력" aria-label="검색창" placeholder="메뉴명을 검색하세요">
+						<button type="button" class="delete-icon" aria-label="검색어 지우기" tabindex="-1"></button>
+						<button type="button" class="search-icon" aria-label="검색"></button>
+					</div>
+				</div>
+				<div class="menu-title">
+					<ul>
+						<li><a href="#item1">사이버창구</a></li>
+						<li><a href="#item2">보험상품</a></li>
+						<li><a href="#item3">금융상품</a></li>
+						<li><a href="#item4">혜택</a></li>
+						<li><a href="#item5">헬프데스크</a></li>
+						<li><a href="#item6">소비자포털</a></li>
+						<li><a href="#item7">이용안내 및 신고센터</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="menu-list">
+				<div class="list">
+					<h2 id="item1"><a href="#"><span>사이버창구</span></a></h2>
+					<div class="depth">
+						<h3><a href="#">보험계약조회</a></h3>
+						<ul>
+							<li><a href="#">보험계약조회</a></li>
+							<li><a href="#">변액보험계약조회</a></li>
+							<li><a href="#">보험거래내역</a></li>
+							<li><a href="#">금리연동형공시실</a></li>
+							<li><a href="#">연금저축보험공시실</a></li>
+							<li><a href="#">연금예상액조회</a></li>
+						</ul>
+						<h3><a href="#">보험계약변경</a></h3>
+						<ul>
+							<li><a href="#">펀드변경/자동재배분</a></li>
+							<li><a href="#">펀드변경/자동재배분내역</a></li>
+							<li><a href="#">감액/특약해지(해약)</a></li>
+							<li><a href="#">연금정보변경</a></li>
+							<li><a href="#">보험계약변경내역</a></li>
+							<li><a href="#">갱신변경</a></li>
+							<li><a href="#">청약철회신청/취소</a></li>
+						</ul>
+						<h3><a href="#">사고보험금</a></h3>
+						<ul>
+							<li><a href="#">사고보험금 안내/접수</a></li>
+							<li><a href="#">사고보험금 예상조회</a></li>
+							<li><a href="#">사고보험금 처리현황</a></li>
+						</ul>
+						<h3><a href="#">일반보험금</a></h3>
+						<ul>
+							<li><a href="#">분할보험금신청</a></li>
+							<li><a href="#">배당금신청</a></li>
+							<li><a href="#">만기보험금신청</a></li>
+							<li><a href="#">해지환급금신청</a></li>
+							<li><a href="#">휴면보험금신청</a></li>
+							<li><a href="#">중도인출신청</a></li>
+							<li><a href="#">신청결과확인</a></li>
+						</ul>
+						<h3><a href="#">보험료납입</a></h3>
+						<ul>
+							<li><a href="#">보험료납입</a></li>
+							<li><a href="#">자유/추가납입</a></li>
+							<li><a href="#">자유/추가납입 정기이체</a></li>
+							<li><a href="#">달러보험 원화고정납입금액변경</a></li>
+							<li><a href="#">납입신청결과확인</a></li>
+							<li><a href="#">계약사항변경</a></li>
+							<li><a href="#">신청내역 확인</a></li>
+						</ul>
+						<h3><a href="#">대출</a></h3>
+						<ul>
+							<li><a href="#">보험계약대출현황</a></li>
+							<li><a href="#">보험계약대출신청</a></li>
+							<li><a href="#">보험계약대출신청내역</a></li>
+							<li><a href="#">보험계약대출상환</a></li>
+							<li><a href="#">보험계약대출분할상환</a></li>
+							<li><a href="#">개인대출현황</a></li>
+							<li><a href="#">신용대출신청</a></li>
+							<li><a href="#">개인대출상환</a></li>
+						</ul>
+						<h3><a href="#">고객정보관리</a></h3>
+						<ul>
+							<li><a href="#">내 정보관리</a></li>
+							<li><a href="#">My Tops Club</a></li>
+							<li><a href="#">마케팅동의/철회</a></li>
+							<li><a href="#">내 계좌관리</a></li>
+							<li><a href="#">내 계약관리</a></li>
+							<li><a href="#">안내장발송내역조회</a></li>
+						</ul>
+						<h3><a href="#">증명서발급</a></h3>
+						<ul>
+							<li><a href="#">보험료 납입증명서</a></li>
+							<li><a href="#">대출증명서</a></li>
+							<li><a href="#">사고보험금 지급내역서</a></li>
+							<li><a href="#">증권재발행</a></li>
+							<li><a href="#">해지환급금증명서</a></li>
+							<li><a href="#">퇴직연금증명서</a></li>
+						</ul>
+						<h3><a href="#">고객지원/보안</a></h3>
+						<ul>
+							<li><a href="#">신한라이프/보안카드</a></li>
+							<li><a href="#">공동인증서관리</a></li>
+							<li><a href="#">금융인증서관리</a></li>
+							<li><a href="#">타기관OTP관리</a></li>
+							<li><a href="#">이용가이드</a></li>
+							<li><a href="#">녹취신청</a></li>
+							<li><a href="#">설치프로그램안내</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="list">
+					<h2 id="item2">
+						<a href="#"><span>보험상품</span><span class="more-btn">메인 바로가기</span></a>
+					</h2>
+					<div class="depth">
+						<h3><a href="#">보험상품 자세히 알아보기</a></h3>
+					</div>
+				</div>
+				<div class="list">
+					<h2 id="item3">
+						<a href="#"><span>금융상품</span><span class="more-btn">메인 바로가기</span></a>
+					</h2>
+					<div class="depth">
+						<h3><a href="#">대출</a></h3>
+						<ul>
+							<li><a href="#">보험계약대출</a></li>
+							<li><a href="#">보험계약자신용대출</a></li>
+							<li><a href="#">아파트담보대출</a></li>
+						</ul>
+						<h3><a href="#">퇴직연금</a></h3>
+						<ul>
+							<li><a href="#">제도안내</a></li>
+							<li><a href="#">상품안내</a></li>
+							<li><a href="#">자산운용가이드</a></li>
+						</ul>
+						<h3><a href="#">펀드</a></h3>
+						<ul>
+							<li><a href="#">상품안내</a></li>
+							<li><a href="#">매매안내</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="list">
+					<h2 id="item4"><a href="#"><span>혜택</span></a></h2>
+					<div class="depth">
+						<h3><a href="#">라이프 온</a></h3>
+						<ul>
+							<li><a href="#">따뜻한 행복 서비스</a></li>
+							<li><a href="#">라이프 온 노트</a></li>
+							<li><a href="#">종합건강검진 우대서비스</a></li>
+						</ul>
+						<h3><a href="#">Wealth Management</a></h3>
+						<ul>
+							<li><a href="#">WM서비스안내</a></li>
+							<li><a href="#">WM센터 서비스</a></li>
+							<li><a href="#">WM고객 프로그램</a></li>
+							<li><a href="#">상속증여연구소 전문콘텐츠</a></li>
+						</ul>
+						<h3><a href="#">Tops Club</a></h3>
+						<ul>
+							<li><a href="#">신한플러스안내</a></li>
+							<li><a href="#">신한플러스 멤버십 등급안내</a></li>
+							<li><a href="#">가족합산제도</a></li>
+							<li><a href="#">Tops 등급 안내</a></li>
+							<li><a href="#">Tops 서비스</a></li>
+						</ul>
+						<h3><a href="#">생활서비스</a></h3>
+						<ul>
+							<li><a href="#">운세/사주</a></li>
+							<li><a href="#">건강정보서비스</a></li>
+						</ul>
+						<h3><a href="#">이벤트</a></h3>
+						<ul>
+							<li><a href="#">진행중인 이벤트</a></li>
+							<li><a href="#">지난 이벤트</a></li>
+							<li><a href="#">신한's 이벤트</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="list">
+					<h2 id="item5">
+						<a href="#"><span>헬프데스크</span><span class="more-btn">메인 바로가기</span></a>
+					</h2>
+					<div class="depth">
+						<h3><a href="#">FAQ</a></h3>
+						<h3><a href="#">구비서류안내</a></h3>
+						<ul>
+							<li><a href="#">사고보험금 청구</a></li>
+							<li><a href="#">제지급금 청구</a></li>
+							<li><a href="#">보험계약 변경</a></li>
+							<li><a href="#">양식다운로드</a></li>
+						</ul>
+						<h3><a href="#">계약고객 서비스</a></h3>
+						<h3><a href="#">지점 및 업무 안내</a></h3>
+						<ul>
+							<li><a href="#">지점찾기</a></li>
+							<li><a href="#">업무채널 안내</a></li>
+							<li><a href="#">모바일서비스 안내</a></li>
+						</ul>
+						<h3><a href="#">공지사항</a></h3>
+					</div>
+				</div>
+				<div class="list">
+					<h2 id="item6">
+						<a href="#"><span>소비자포털</span><span class="more-btn">메인 바로가기</span>
+						</a>
+					</h2>
+					<div class="depth">
+						<h3><a href="#">고객의소리</a></h3>
+						<ul>
+							<li><a href="#">고객의 소리 접수</a></li>
+							<li><a href="#">나의 접수내역</a></li>
+						</ul>
+						<h3><a href="#">소비자보호체계</a></h3>
+						<ul>
+							<li><a href="#">금융소비자보호헌장</a></li>
+							<li><a href="#">소비자보호조직도</a></li>
+							<li><a href="#">민원처리프로세스</a></li>
+							<li><a href="#">상품개발프로세스</a></li>
+							<li><a href="#">금융소비자보호내부통제규정</a></li>
+							<li><a href="#">금융소비자보호업무규정</a></li>
+						</ul>
+						<h3><a href="#">소비자보호공시</a></h3>
+						<ul>
+							<li><a href="#">민원건수공시</a></li>
+							<li><a href="#">금융소비자보호 실태평가결과 공시</a></li>
+						</ul>
+						<h3><a href="#">소비자보호우수사례</a></h3>
+						<h3><a href="#">유용한소비자보호정보</a></h3>
+						<ul>
+							<li><a href="#">유용한 소비자정보</a></li>
+							<li><a href="#">보험 분쟁조정사례 및 판례</a></li>
+							<li><a href="#">금융사기 관련 유의사항</a></li>
+						</ul>
+						<h3><a href="#">유용한사이트</a></h3>
+					</div>
+				</div>
+				<div class="list">
+					<h2 id="item7">
+						<a href="#"><span>이용안내 및 신고센터</span></a>
+					</h2>
+					<div class="depth">
+						<h3><a href="#">개인정보 보호</a></h3>
+						<ul>
+							<li><a href="#">개인정보처리방침</a></li>
+							<li><a href="#">고객정보취급방침</a></li>
+							<li><a href="#">신용정보활용체제</a></li>
+							<li><a href="#">고객권리안내문</a></li>
+							<li><a href="#">이용자유의사항</a></li>
+							<li><a href="#">전자금융거래 10계명</a></li>
+							<li><a href="#">영상정보처리기기 운영관리지침</a></li>
+							<li><a href="#">개인정보동의안내</a></li>
+							<li><a href="#">개인신용정보 이용 &middot; 제공 조회</a></li>
+							<li><a href="#">개인정보 열람</a></li>
+							<li><a href="#">마케팅동의 철회</a></li>
+						</ul>
+						<h3><a href="#">약관/정책</a></h3>
+						<ul>
+							<li><a href="#">홈페이지 이용약관</a></li>
+							<li><a href="#">디지털보험 이용약관</a></li>
+							<li><a href="#">전자금융거래이용약관</a></li>
+							<li><a href="#">전자금융서비스이용약관</a></li>
+							<li><a href="#">신한라이프와 함께하는 오늘</a></li>
+							<li><a href="#">신한라이프스퀘어앱이용약관</a></li>
+							<li><a href="#">신한라이프카드 이용약관</a></li>
+						</ul>
+						<h3><a href="#">조회/안내</a></h3>
+						<ul>
+							<li><a href="#">금융사기 관련 유의사항</a></li>
+							<li><a href="#">상속인 금융거래 조회서비스</a></li>
+							<li><a href="#">숨은 보험금 조회하기</a></li>
+							<li><a href="#">유사금융식별요령</a></li>
+						</ul>
+						<h3><a href="#">신고센터</a></h3>
+						<ul>
+							<li><a href="#">펀드판매관련불편신고센터</a></li>
+							<li><a href="#">보험범죄신고센터</a></li>
+							<li><a href="#">미승인 안내자료 신고센터</a></li>
+							<li><a href="#">보험모집질서 위반신고</a></li>
+							<li><a href="#">장애인보험가입차별 신고센터</a></li>
+							<li><a href="#">대출모집 부당/과장광고 신고센터</a></li>
+							<li><a href="#">서민금융1332</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<button type="button" class="close-btn" aria-label="닫기"></button>
+		</div>
+	</header>
+	<!-- E : PC gnb -->
+	<div class="contents" id="contents">
+		<h1 class="visuallyHidden">신한라이프 메인홈</h1>
+		<h2></h2>
+		<h2>지속 가능한 원더풀 라이프,<br>신한라이프와 함께 하세요</h2>
+		<!--
+			* 세세하게 보지 말고 전체 덩어리를 보고 하면 된다.
+			- h1이 꼭 로고에 있을 필요는 없다. 외국홈페이지보면 페이지의 큰 타이틀? 전체 내용이 h1에 포함되어 있음. BBCnews / 애플 / MS 참고
+			- html 크롤링 순서 : title -> h1(h1이 로고일경우 새로운 홈페이지 들어가면 계속 로고만 상기시켜줌.)
+
+			Q. h2바로오면안됨.h1필요, h1은 콘텐츠화면을 소개해주는데 header에 h2가 들어가면안될거같은데.....
+			A. h1 > h2 > h3..순서대로 와야됨(그대신 중첩 가능)
+			===> css걷어내고한번보기
+			그러면 header에서는 aria로 설명하고 콘텐츠부터 h1시작?? 어차피 aria가 설명해주니깐????
+
+			Q. content:''; 스크린리더기가 읽어줄까?
+		-->
+	</div>
+	<footer>
+		<nav class="footernav" aria-label="고객서비스 navigation">
+			<div class="inner">
+				<ul>
+					<li>
+						<button type="button" class="nav-btn" id="navBtn01" aria-controls="depth01">개인정보 보호</button>
+						<ul class="depth" id="dpeth01" aria-labelledby="navBtn01">
+							<li><a href="#">개인정보처리방침</a></li>
+							<li><a href="#">고객정보취급방침</a></li>
+							<li><a href="#">신용정보활용체제</a></li>
+							<li><a href="#">고객권리안내문</a></li>
+							<li><a href="#">이용자유의사항</a></li>
+							<li><a href="#">전자금융거래 10계명</a></li>
+							<li><a href="#">영상정보처리기기 운영관리지침</a></li>
+							<li><a href="#">개인정보동의안내</a></li>
+							<li><a href="#">개인신용정보 이용 &middot; 제공 조회</a></li>
+							<li><a href="#">개인정보 열람</a></li>
+							<li><a href="#">마케팅동의 철회</a></li>
+						</ul>
+					</li>
+					<li>
+						<button type="button" class="nav-btn" id="navBtn02" aria-controls="depth02">약관/정책</button>
+						<ul class="depth" id="depth02" aria-labelledby="navBtn02">
+							<li><a href="#">홈페이지이용약관</a></li>
+							<li><a href="#">디지털보험 이용약관</a></li>
+							<li><a href="#">전자금융거래 이용약관</a></li>
+							<li><a href="#">전자금융서비스 이용약관</a></li>
+							<li><a href="#">신한라이프와 함께하는 오늘</a></li>
+							<li><a href="#">신한라이프스퀘어앱 이용약관</a></li>
+							<li><a href="#">신한라이프카드 이용약관</a></li>
+						</ul>
+					</li>
+					<li>
+						<button type="button" class="nav-btn" id="navBtn03" aria-controls="depth03">조회/안내</button>
+						<ul class="depth" id="depth03" aria-labelledby="navBtn03">
+							<li><a href="#">금융사기 관련 유의사항</a></li>
+							<li><a href="#">상속인 금융거래 조회서비스</a></li>
+							<li><a href="#" class="arrow-icon">숨은 보험금 조회하기</a></li>
+							<li><a href="#" class="arrow-icon">유사금융식별요령</a></li>
+						</ul>
+					</li>
+					<li>
+						<button type="button" class="nav-btn" id="navBtn04" aria-controls="depth04">신고센터</button>
+						<ul class="depth" id="depth04" aria-labelledby="navBtn04">
+							<li><a href="#">펀드판매관련불편신고센터</a></li>
+							<li><a href="#">보험범죄신고센터</a></li>
+							<li><a href="#">미승인 안내자료 신고센터</a></li>
+							<li><a href="#" class="arrow-icon">보험모집질서 위반신고</a></li>
+							<li><a href="#">장애인보험가입차별 신고센터</a></li>
+							<li><a href="#">대출모집 부당/과장광고 신고센터</a></li>
+							<li><a href="#" class="arrow-icon">서민금융1332</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="company-wrap">
+			<div class="info-area">
+				<span class="info-logo"><img src="https://www.shinhanlife.co.kr/resources/images/cdh/common/footer_sh_logo.svg" alt="신한라이프"></span>
+				<div class="link-group">
+					<a href="#" class="pointC1">개인정보처리방침</a>
+					<a href="#" class="pointC1">신용정보활용체제</a>
+					<a href="#">마케팅동의</a>
+					<a href="#">가입설계동의</a>
+					<a href="#">전자민원접수</a>
+					<a href="#">보호금융상품등록부</a>
+				</div>
+				<div class="phone-group">
+					<span>고객센터 <a href="tel:1588-5580">1588-5580</a>
+						<span>(해외 </span><a href="tel:82-2-2131-3000">82-2-2131-3000</a>)
+					</span>
+					<span>해피콜센터 <a href="tel:1522-2285">1522-2285</a></span>
+					<span>신용대출문의 <a href="tel:1899-6669">1899-6669</a></span>
+					<span>아파트담보대출문의 <a href="tel:02-741-1735">02-741-1735</a></span>
+				</div>
+				<address><!-- [!] address하나로 묶기 -->
+					<span><em class="visuallyHidden">주소</em>04542 서울특별시 중구 삼일대로 358(을지로2가) 신한라이프생명보험 주식회사</span>
+					<span>대표이사 성대규</span>
+					<span>사업자등록번호 104-81-28992</span>
+				</address>
+				<p class="copyright">&copy; 2021 Shinhan Life Insurance Co., Ltd.</p>
+			</div>
+			<div class="related-info">
+				<div class="group-select">
+					<input type="checkbox" class="select-btn" id="name"><!-- input type="button" & button :: aria-selected있는지 확인 -->
+					<label for="name" class="select-lable">신한금융그륩</label><!-- 위의 체크박스포커스되면 읽어주는지 -->
+					<ul class="select-list">
+						<li><a href="#">신한은행</a></li>
+						<li><a href="#">신한카드</a></li>
+						<li><a href="#">신한투자증권</a></li>
+						<li><a href="#">신한캐피탈</a></li>
+						<li><a href="#">신한자산운용</a></li>
+						<li><a href="#">제주은행</a></li>
+						<li><a href="#">신한저축은행</a></li>
+						<li><a href="#">신한자산신탁</a></li>
+						<li><a href="#">신한DS</a></li>
+						<li><a href="#">신한아이타스</a></li>
+						<li><a href="#">신한신용정보</a></li>
+						<li><a href="#">신한리츠운용</a></li>
+						<li><a href="#">신한 AI</a></li>
+						<li><a href="#">신한벤처투자</a></li>
+						<li><a href="#">신한장학재단</a></li>
+						<li><a href="#">신한금융희망재단</a></li>
+						<li><a href="#">신한라이프 빛나는 재단</a></li>
+					</ul>
+				</div>
+				<div class="awards">
+					<a href="#" target="_blank"><img src="/" alt="정보통신접근성 품질인증마크"></a>
+					<a href="#"><img src="/" alt="2020 대한민국 퍼스트브랜드대상 12년 연속 수상"></a>
+					<a href="#"><img src="/" alt="2020 KMAC 선정 KSQI 한국의 우수 콜센터 11년 연속 선정"></a>
+				</d>
+			</div>
+		</div>
+	</footer>
+
+	<button type="button" class="pop-btn">팝업클릭</button>
+</div>
+
+<!-- S : poup -->
+<div class="popwrap"><!-- tabindex="-1"일까 왜.. -->
+    <!-- <div class="focusSet blind first" tabindex="0"></div> -->
+    <div class="popup">
+		<div class="popcontain">
+			<div class="popcont col_11">
+				<div class="pophead">
+					<h1 class="titH1">POPUP TITLE</h1>
+				</div>
+				<div class="popbody" tabindex="0">
+					<section>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus illum aut tempore fugit aliquid, expedita qui modi sunt, libero suscipit adipisci necessitatibus velit labore eaque. Distinctio totam voluptatibus sequi voluptatum.
+						Odit aspernatur nemo molestiae assumenda voluptatibus quae harum enim fugit repudiandae! Explicabo, quas distinctio eveniet voluptates aliquam fuga facilis natus, quasi eligendi perferendis asperiores, molestias ducimus soluta maiores. Dolores, earum?
+						Culpa tenetur nobis eaque illo a molestias necessitatibus sint fugit illum quos itaque sed sequi deleniti ipsa incidunt veritatis ut, vel autem explicabo impedit quam quibusdam optio! Libero, ullam quidem.
+						Corrupti odit quis libero quia eveniet labore explicabo consequatur asperiores illum, ducimus quibusdam nemo iusto ipsam pariatur rerum deserunt quos ex! Pariatur ipsam voluptate incidunt sit reiciendis voluptates qui nam!
+						Labore mollitia earum nulla eligendi asperiores repellendus at corrupti itaque dignissimos. Consequuntur autem soluta fuga, illo saepe voluptates blanditiis veniam accusamus quaerat quidem assumenda dolorum qui itaque delectus suscipit consectetur?
+						Vel soluta quisquam magni est, assumenda placeat, nemo repellat, veritatis dolorum exercitationem impedit nisi quia nulla iste doloribus maxime qui aspernatur quod ipsam ullam porro cupiditate? Quibusdam modi corporis commodi?
+						Quos amet neque at! Illum eius, soluta est omnis deserunt, labore atque temporibus enim veritatis dolorem praesentium! Ad dicta error reprehenderit optio tempora officia laudantium, minima labore soluta ducimus expedita!
+						Facere, eaque culpa laboriosam iusto minima placeat a, totam iure illum vitae repellat voluptatum fugit eligendi officia assumenda eius reiciendis sunt doloribus nam. Quam, voluptas. Labore ipsam quisquam nulla explicabo.
+						Incidunt, ex inventore eum eaque illo dolorem distinctio in itaque velit. Illo veritatis nesciunt laboriosam qui minima incidunt. Consequatur reiciendis deleniti fuga nostrum rem! Animi molestiae minus nam ullam libero?
+						Pariatur doloremque optio, placeat dicta similique accusamus vel modi cumque quidem culpa eaque corrupti, ipsum voluptates ea architecto alias recusandae ratione atque laborum error commodi, quo dolores! Laboriosam, nisi quo.
+						Culpa magnam consequatur, ipsum praesentium dicta sapiente nemo vero illo suscipit nulla minima beatae vitae. In numquam inventore voluptas deleniti, dolorum unde ducimus doloremque, fuga dolore dicta debitis, delectus obcaecati.
+						Ad laborum magnam laudantium doloremque, necessitatibus velit amet, neque animi, ipsam vel doloribus consequatur beatae voluptatem expedita est cupiditate voluptates atque aperiam. Rem, delectus earum. Sapiente nihil doloremque praesentium eius!
+						Esse hic illum officiis, nobis exercitationem assumenda dolor neque facilis sit quis temporibus dolore excepturi tempora nostrum? Ad ducimus odit ullam consectetur quisquam. Atque non nam obcaecati ex, asperiores libero.
+						Laboriosam corporis perspiciatis beatae perferendis ex suscipit architecto? Harum numquam minima repudiandae ullam illum eius eligendi incidunt maiores voluptatum sapiente? Minima aut molestiae aspernatur totam, quos nisi facere. Modi, quis?
+						Officia soluta velit aliquam tempora nesciunt iusto reiciendis amet facere quidem, porro enim dolor minima, aut quam corporis beatae mollitia debitis laudantium in consequatur possimus? Dolores sint maxime quasi iste?
+						Voluptatum nemo natus obcaecati reprehenderit aliquid tempora, delectus aspernatur labore nihil distinctio similique, sequi, alias nobis quidem ratione. Incidunt quod accusantium unde expedita debitis, doloremque cumque quidem quae aliquid! Consectetur!
+						Odio cupiditate voluptatum molestiae, exercitationem possimus, sint consequatur, repellendus doloribus quod reiciendis tenetur consequuntur minus amet earum perspiciatis? Praesentium, explicabo? Excepturi nobis vel expedita neque nemo temporibus. Dolores, nam sint.
+						Maiores vitae suscipit doloribus a repellendus libero aspernatur quam ratione ut totam ad voluptates corrupti dolores odio ab laudantium, repellat ipsa perspiciatis? Assumenda minima harum eaque, amet architecto facilis cum.
+						Eum omnis aperiam id sed quod voluptate, quo, expedita, consequatur assumenda culpa et nesciunt porro enim accusantium optio non corporis laudantium facilis ea dolorum aliquid molestiae commodi ullam nobis! Repudiandae!
+						Consequuntur non dicta quia recusandae possimus, ex tempore ab inventore quidem minus soluta perspiciatis rem praesentium quibusdam vero quasi deserunt reprehenderit alias eum ut tenetur doloribus mollitia. Blanditiis, quo nam.
+						Voluptas, quibusdam consectetur tenetur explicabo, pariatur, earum minus ab sed eaque adipisci mollitia a magni incidunt at eius inventore sapiente quis necessitatibus tempore quaerat optio? Voluptatum aliquid laboriosam odit tempore?
+						Esse ad voluptatem laborum corrupti, placeat voluptatibus et suscipit ipsam temporibus amet, minus, ducimus odit ab ea! Minus quo, necessitatibus illo consectetur alias reprehenderit adipisci neque obcaecati eos placeat fugiat.
+						Ipsum nemo non voluptas, corporis, itaque natus officiis aspernatur placeat magni sequi quibusdam eaque! Expedita sint alias magnam distinctio asperiores, delectus officiis ea voluptate! Nesciunt dolorem corporis quidem perferendis deleniti?
+						Impedit harum aliquid architecto delectus pariatur. Eius, sit. A voluptatibus incidunt quas libero ipsum necessitatibus impedit commodi rem harum ipsa, eveniet porro deleniti quibusdam quae pariatur sint natus laboriosam error.
+						Laborum consequatur est et non optio explicabo excepturi doloremque, at labore magnam! Tempore molestias iure voluptas veniam doloribus error fugiat excepturi! Laboriosam ut velit magni unde labore voluptate nesciunt et!
+						Tempore quaerat, optio quibusdam debitis placeat reprehenderit cupiditate rem sequi, porro beatae iure ducimus explicabo ea rerum pariatur molestias, nemo vitae eius aspernatur excepturi esse? Officia magni unde molestiae enim.
+						Voluptatem, nam neque fuga dolore aliquid illum at doloremque itaque omnis! Voluptatibus, repudiandae odit! Natus magnam consequuntur obcaecati cupiditate facere ipsa eos accusantium, corporis reiciendis necessitatibus recusandae maiores, ex cumque.
+						Voluptas similique laudantium vitae voluptatibus deleniti nostrum mollitia veniam itaque, nemo alias nisi deserunt ad sint corrupti. A commodi ullam, quidem vel laudantium, facilis aliquam illo sequi aliquid necessitatibus repellendus!
+						Error fugiat aperiam fuga autem maxime sed asperiores minus atque dolorum magnam assumenda beatae blanditiis architecto fugit suscipit quo ducimus, dolorem quas repudiandae laborum, explicabo inventore laboriosam? Quam, fugit quasi.
+						Illum sunt laboriosam, error quo distinctio suscipit aut eveniet fugit maiores saepe vitae blanditiis quam deleniti porro quasi dolorum quod repellendus perferendis at quas esse? In odit soluta facere animi.
+						Mollitia provident eius deleniti saepe, eveniet ipsum facere, ducimus earum explicabo, quasi ea perspiciatis sed voluptate veritatis eos voluptas consequuntur iure officia accusantium aut. Repellendus excepturi odit amet accusamus ex.
+						Ab, corrupti aspernatur? Culpa molestiae quidem facere quasi, mollitia cum ullam corporis architecto amet error asperiores? Ratione, assumenda aperiam quos, magnam molestiae accusantium ut harum architecto rem nemo, officiis neque?
+						Culpa hic voluptatum nostrum reprehenderit cumque ipsam consectetur obcaecati, temporibus accusantium possimus rerum sapiente quod consequatur tempore, vero repudiandae aliquid praesentium doloribus tempora porro magnam officia. Aperiam est consequatur possimus.
+						Ex doloribus natus facere eligendi voluptas molestias et inventore nam quisquam, ad velit ab animi commodi! Vero pariatur deleniti quo! Expedita ab aliquid enim maxime aliquam deserunt laudantium delectus debitis?
+						Commodi cumque necessitatibus aperiam, odit rerum recusandae eius ex deserunt quisquam sit consequatur distinctio voluptate aliquid praesentium reprehenderit voluptas ipsam doloremque doloribus perspiciatis repellendus sunt! Cupiditate officia aut corporis vero?
+						Rerum accusantium aperiam sit cumque totam molestias beatae quam at? Consequuntur eaque natus ducimus aperiam nesciunt soluta enim in esse reiciendis, ab vero, quis quisquam magnam repellendus amet quam tempora!
+						Modi vitae excepturi dolore sed saepe eaque molestiae blanditiis recusandae, distinctio, fugit repudiandae neque voluptatem doloremque quas numquam mollitia ipsum minima at ea tempore dolorem nobis ducimus minus? Ipsum, nobis.
+						Cumque, ducimus? Dicta ipsa repellendus unde nam eos eligendi. Mollitia illum voluptatum repellendus obcaecati doloremque nam ad perspiciatis excepturi! Nihil tempore quidem quas possimus animi amet labore quam incidunt autem!
+						Saepe ea, laborum pariatur, officiis nostrum deserunt obcaecati, atque fugiat ducimus nesciunt maiores placeat! Unde eum et mollitia, ex quae modi necessitatibus odio quas dolore atque culpa velit, soluta laborum!
+						Eveniet explicabo ut quidem voluptates quos temporibus magnam odio consequuntur doloribus, ad ullam, provident dolores voluptatibus. Eum illum ex natus itaque cumque voluptatem unde? Veritatis magnam dolorem dolores eveniet ipsam?
+						Sapiente, eius amet? Quam maiores magnam consequatur placeat? Numquam adipisci explicabo exercitationem cum ipsam fugiat delectus magnam! Culpa reprehenderit ad excepturi fugit! Veniam, libero. Porro id incidunt quasi placeat sit.
+						Veniam obcaecati vero doloribus a ullam commodi earum repellendus provident voluptate, suscipit voluptas exercitationem quas modi sint expedita dolores dolorum amet ut doloremque quam nemo quibusdam? Aut quae officia adipisci!
+						Doloremque optio eaque eligendi voluptatibus ad ea similique consectetur ratione exercitationem autem, hic dolore laborum, quisquam itaque delectus animi. Sed ea omnis laudantium error voluptates! Et, eos. Deleniti, exercitationem ipsam!
+						Eveniet, non repellendus debitis voluptatibus mollitia quod cum voluptatem corrupti itaque aspernatur, quo, velit totam laudantium quam! Quia ea nobis provident, sed facere repellat tempore saepe blanditiis repellendus architecto doloremque!
+						Ipsum ut accusantium nobis, voluptatibus corporis ducimus suscipit vel quasi minus, porro, mollitia quos? Voluptatum repellat qui explicabo quos tempore voluptates atque quibusdam, perspiciatis, totam nam blanditiis porro sequi aut!
+						Velit omnis, quibusdam itaque natus possimus, illum sapiente sed doloremque doloribus, voluptates incidunt. Iusto consequuntur, in animi ipsam harum expedita hic debitis numquam nam, ut rem id cumque rerum laboriosam.
+						Magni laboriosam perferendis laborum alias quos, assumenda ipsum adipisci ratione aspernatur ab placeat sunt, est suscipit voluptatibus deleniti consequatur debitis, ex nesciunt optio sit explicabo eligendi quibusdam! Molestias, at ratione!
+						Deleniti voluptates, perspiciatis voluptate nihil quae in. In enim amet magnam quisquam deserunt. Quisquam molestiae sequi pariatur voluptates quis mollitia quam neque, totam cum ipsum illum modi, cupiditate, dolorum atque?
+						Quos pariatur sequi corrupti sed atque quia laboriosam, quidem ratione odio totam quae eaque aliquam debitis facere doloremque architecto sint labore corporis qui hic in. Incidunt maiores eligendi tempore explicabo?
+						Neque voluptatem aspernatur veritatis repudiandae dignissimos libero sunt maiores facilis eum sint, eveniet repellendus accusamus ducimus, unde qui sit fugiat, molestiae consectetur? Sed quasi placeat neque assumenda, dignissimos ut ratione!
+					</section>
+				</div>
+				<button type="button" class="close-btn" aria-label="닫기"></button>
+			</div>
+		</div>
+    </div>
+    <!-- <div class="focusSet blind last" tabindex="0"></div> -->
+</div>
+<!-- E : poup -->
+
+<script src="../js/jquery.3.1.0.min.js"></script>
+<script>
+// layer팝업 웹접근성
+/* 
+조건
+1. 팝업 하나일 때, 여러개 일 때
+2. 웹접근성 tabindex / focusin + focusout
+*/
+
+// $('pop-btn').on('click', (e) => {
+	popOpen();
+// });
+function popOpen() {
+	$('.popwrap').each(function() {
+		if($(this).find('.focusSet').length === 0) {
+			$(this).prepend('<div class="focusSet blind first" tabindex="0"></div>');
+			$(this).append('<div class="focusSet blind last" tabindex="0"></div>');
+		}
+	})
+}
+</script>
+</body>
+</html>
+<!--
+	PC / MO GNB
+	- 웹접근성에 맞춰서
+	- 스크립트까지 완료
+	- 검색, 전체메뉴도 완료하기
+-->
+
+<!--
+	<nav>
+	- 문서의 부분 중 현재 페이지 내, 또는 다른 페이지의 링크를 보여줄 때 사용.
+	- 주요 탐색 링크 블록을 위한 요소로 문서의 모든 링크가 <nav>요소 안에 있을 필요는 없다.
+	form태그를 제외한 aria-label을 사용할 때 role도 같이 넣어줘야 된다.
+-->
