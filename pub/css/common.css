@@ -27,6 +27,7 @@ input[type="checkbox"] {
     appearance: inherit !important;
 }
 
+body.popOn {overflow:hidden;}
 /* .wrapper {min-width:1220px; overflow-x:hidden;} */
 /* resize 시 스크롤이 안생김 */
 .pc-block {display:block !important;}
