@@ -26,7 +26,7 @@ input[type="checkbox"] {
     -webkit-appearance: inherit !important;
     appearance: inherit !important;
 }
-
+button:focus, button:active, button:hover {text-decoration:underline;}
 body.popOn {overflow:hidden;}
 /* .wrapper {min-width:1220px; overflow-x:hidden;} */
 /* resize 시 스크롤이 안생김 */
@@ -244,7 +244,7 @@ after,before에서 bg로 left,right:-100% 사용할 때 overflow:hidden해야 �
 popup
 ************************/
 .col_11 {width: 1040px;}
-.popwrap {display:block; position: fixed; top: 0; right:0; bottom: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); opacity: 1; overflow: hidden; z-index: 9999;}
+.popwrap {display:none; position: fixed; top: 0; right:0; bottom: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); opacity: 1; overflow: hidden; z-index: 9999;}
 .popup {display: table; position: relative; width: 100%; height: 100%; margin: 0 auto; overflow: hidden;}
 .popcontain {display: table-cell; position: relative; width: 100%; vertical-align: middle;}
 .popcont {padding: 60px 0 26px; margin: 0 auto; position: relative; background:#fff;}

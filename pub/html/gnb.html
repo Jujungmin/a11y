@@ -854,11 +854,18 @@
 		</div>
 	</footer>
 
-	<button type="button" class="pop-btn" onclick="lp.open('mainPop')">팝업클릭</button>
+	<button type="button" class="pop-btn 11" onclick="lp.open(this,'mainPop')">팝업클릭</button>
+	<button type="button" class="pop-btn 22" onclick="lp.open(this,'subPop')">SUB팝업클릭</button>
+	<button type="button" class="pop-btn 33" onclick="lp.open(this,'mainPop')">팝업클릭</button>
+
+	<a href="#">focus</a>
+	<a href="#">focus</a>
+	<a href="#">focus</a>
+	<a href="#">focus</a>
 </div>
 
 <!-- S : poup -->
-<div class="popwrap" id="mainPop" style="display:none" tabindex="-1"><!-- tabindex="-1"일까 왜.. -->
+<div class="popwrap" id="mainPop" style="display:none"><!-- tabindex="-1"일까 왜.. -->
     <div class="popup">
 		<div class="popcontain">
 			<div class="popcont col_11">
@@ -867,11 +874,8 @@
 				</div>
 				<div class="popbody" tabindex="0">
 					<section>
-						<button type="button" class="pop-btn" onclick="lp.open('subPop')">subpop</button>
-						<a href="#" style="display: block;">focus</a>
-						<a href="#" style="display: block;">focus</a>
-						<a href="#" style="display: block;">focus</a>
-						<a href="#" style="display: block;">focus</a>
+						<button type="button" class="pop-btn" onclick="lp.open(this,'subPop')">subpop</button>
+						<button type="button" class="pop-btn" onclick="lp.open(this,'subPop2')">subpop222222</button>
 						<a href="#" style="display: block;">focus</a>
 					</section>
 				</div>
@@ -893,7 +897,26 @@
 						<button type="button">button</button>
 					</section>
 				</div>
-				<button type="button" class="close-btn subsubsub" aria-label="닫기" onclick="lp.close('allClose')"></button>
+				<button type="button" class="close-btn subsubsub" tabindex="0" aria-label="닫기" onclick="lp.close(this)"></button>
+				<!-- [!]팝업닫은 후에 포커스가 팝업누른버튼에 맞춰져야 함. -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="popwrap" id="subPop2" style="display:none">
+	<div class="popup">
+		<div class="popcontain">
+			<div class="popcont col_11">
+				<div class="pophead">
+					<h1>SUB TITLE2222</h1>
+				</div>
+				<div class="popbody subsubsub" tabindex="0">
+					<section>
+						<button type="button">button</button>
+					</section>
+				</div>
+				<button type="button" class="close-btn subsubsub" tabindex="0" aria-label="닫기" onclick="lp.close('allClose')"></button>
 				<!-- [!]팝업닫은 후에 포커스가 팝업누른버튼에 맞춰져야 함. -->
 			</div>
 		</div>
@@ -910,80 +933,58 @@
 2. 웹접근성 tabindex / focusin + focusout
 3. 팝업 여러개 일 때 처리(웹접근성에 맞게 작업하기)
 */
-
+/** 레이어팝업 **/
 let lp = {
 	zIdx: 1500, // z-index
 	newPop: [], // 새로운팝업추가.
-	open: function(_this) {
+	newBtn: [],
+	open: function(_this, _pop) {
 		$('body').addClass('popOn');
 		$('.wrapper').attr('aria-hidden', 'true');
-			lp.newPop.push(_this);
-			_this = $(`${'#' + _this}`);
+			lp.newPop.push(_pop);
+			lp.newBtn.push(_this);
+			_pop = $(`${'#' + _pop}`);
 			// 두번째팝업 포커스
-			_this.show().find('.popbody').focus();
-			if(_this.find('.focusSet').length === 0) {
-				_this.prepend('<div class="focusSet blind first" tabindex="0"></div>').append('<div class="focusSet blind last" tabindex="0"></div>');
-				_this.find('.focusSet').on({
+			_pop.show().find('.popbody').focus();
+			if(_pop.find('.focusSet').length === 0) {
+				_pop.prepend('<div class="focusSet blind first" tabindex="0"></div>').append('<div class="focusSet blind last" tabindex="0"></div>');
+				_pop.find('.focusSet').on({
 					'focusin': function(e) {
-						_this.find('.popbody').focus();
+						_pop.find('.popbody').focus();
 					}
 				})
 			}
-		_this.closest('.popwrap').attr({
+		_pop.closest('.popwrap').attr({
 			'tabindex': '-1',
-		}).css({
-			'display': 'block',
-			'z-index': lp.zIdx++,
-		});
+			// 부모가 tabindex="-1"이고 자식이 tabindex="0"일 때 스크린리더읽을 수 있는지 확인하기!
+		}).css({'display': 'block', 'z-index': lp.zIdx++});
 	},
-	close: function(_close) {
-		if(_close !== 'allClose') {
+	close: function(_this) {
+		if(_this !== 'allClose') {
+			// 팝업 하나씩 닫기
 			lp.zIdx--;
 			lp.newPop.pop();
-			const closePop = $(_close).closest('.popwrap');
+			$(lp.newBtn[lp.newBtn.length - 1]).focus();
+			lp.newBtn.pop();
+			$( '#' + lp.newPop[lp.newPop.length-1] ).focus();
+			const closePop = $(_this).closest('.popwrap');
 			closePop.removeAttr('tabindex').css({'display': 'none', 'z-index': ''});
-			// console.log(lp.newPop)
 			if(lp.newPop.length === 0) {
 				$('body').removeClass('popOn');
 				$('.wrapper').removeAttr('aria-hidden');
 			}
 		} else {
+			// 팝업 모두 닫기
 			lp.zIdx = 1500;
 			lp.newPop = [];
 			$('.popwrap').removeAttr('tabindex').css({'display': 'none', 'z-index': ''});
 			$('body').removeClass('popOn');
 			$('.wrapper').removeAttr('aria-hidden');
+			$(lp.newBtn[0]).focus();
+			lp.newBtn = [];
 		}
 	}
 }
-
-
-function popOpen() {
-	$('body').addClass('popOn');
-	$('.wrapper').attr('aria-hidden', 'ture');
-	// focus 순서 : first -> popbody -> close-btn -> last
-	$('.popwrap').attr('tabindex', -1); // focustSet.first 부터 포커스 맞추기 위해
-	$('.popwrap').each(function() {
-		if($(this).find('.focusSet').length === 0) {
-			$(this).prepend('<div class="focusSet blind first" tabindex="0"></div>');
-			$(this).append('<div class="focusSet blind last" tabindex="0"></div>');
-			$(this).find('.focusSet').on({
-				'focusin': function(e) {
-					if($(e.target).hasClass('first')) {
-						// console.log('first');
-						// $('.popwrap .popcont').last().focus();
-					} else {
-						// console.log('last'); // 닫기버튼 포커스아웃될떄
-						// $('.popbody').first().focus();
-					}
-				}
-			})
-		}
-		
-	})
-}
-
-
 </script>
 </body>
 </html>
