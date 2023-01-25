@@ -854,23 +854,32 @@
 		</div>
 	</footer>
 
+	<a href="#">focus</a>
+
 	<button type="button" class="pop-btn 11" onclick="lp.open(this,'mainPop')">팝업클릭</button>
 	<button type="button" class="pop-btn 22" onclick="lp.open(this,'subPop')">SUB팝업클릭</button>
 	<button type="button" class="pop-btn 33" onclick="lp.open(this,'mainPop')">팝업클릭</button>
 
-	<a href="#">focus</a>
-	<a href="#">focus</a>
-	<a href="#">focus</a>
+	<!-- <button type="button" class="pop-btn 11" data-bs-target="">팝업클릭</button>
+	<button type="button" class="pop-btn 22" onclick="lp.open(this,'subPop')">SUB팝업클릭</button>
+	<button type="button" class="pop-btn 33" onclick="lp.open(this,'mainPop')">팝업클릭</button> -->
+
 	<a href="#">focus</a>
 </div>
 
+<div class="parent">
+	tabindex=-1
+	<div tabindex="0">tabindex=0</div><!-- 자식요소 포커스 됨 -->
+</div>
+
+
 <!-- S : poup -->
-<div class="popwrap" id="mainPop" style="display:none"><!-- tabindex="-1"일까 왜.. -->
+<div class="popwrap" id="mainPop" role="dialog" aria-hidden="true" aria-labelledby="titH1" style="display:none"><!-- tabindex="-1"일까 왜.. -->
     <div class="popup">
 		<div class="popcontain">
 			<div class="popcont col_11">
 				<div class="pophead">
-					<h1 class="titH1">POPUP TITLE</h1>
+					<h1 id="titH1">POPUP TITLE</h1><!-- head에 문구가 있으면 읽어줘야지.. tabindex="0" 추가 / 일단 스크린리더기가 읽어주는지 확인 -->
 				</div>
 				<div class="popbody" tabindex="0">
 					<section>
@@ -890,7 +899,7 @@
 		<div class="popcontain">
 			<div class="popcont col_11">
 				<div class="pophead">
-					<h1>SUB TITLE</h1>
+					<h1 id="titH1">SUB TITLE</h1>
 				</div>
 				<div class="popbody subsubsub" tabindex="0">
 					<section>
@@ -932,6 +941,15 @@
 1. 팝업 하나일 때, 여러개 일 때
 2. 웹접근성 tabindex / focusin + focusout
 3. 팝업 여러개 일 때 처리(웹접근성에 맞게 작업하기)
+
+data로 끌고와서 하는게 낫겠지..?
+
+※ ARIA role="dialog"를 이용하여 모달 다이얼로그 구현할 경우 웹접근성 확인해야 할 부분!
+(1) 다이얼로그 팝업이 사용되는 컨테이너(div)에 role="dialog" 속성 가지고 있는지 확인.
+(2) 사용자 인터렉션이나 다른 이벤트에 따라 자바스크립트를 통해 컨데이너가 삽입(혹은 노출)되는지 확인.
+(3) 다이얼로그가 활성화되면 컨테이너 안의 요소가 포커스 되는지 확인.
+(4) 다이얼로그가 활성화되면 컨테이너에 없는 요소가 포커스 되지 않았는지 확인.
+(5) 다이얼로그가 비활성화되면 다이얼로그를 활성화시켰던 컨트롤요소에 포커스가 됐는지 확인. => 팝업창을 닫은 후 팝업창을 열었던 버튼에 포커스 유지.
 */
 /** 레이어팝업 **/
 let lp = {
