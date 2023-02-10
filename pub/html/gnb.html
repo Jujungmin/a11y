@@ -955,7 +955,7 @@ data로 끌고와서 하는게 낫겠지..?
 let lp = {
 	zIdx: 1500, // z-index
 	newPop: [], // 새로운팝업추가.
-	newBtn: [],
+	newBtn: [], // 클릭한 버튼
 	open: function(_this, _pop) {
 		$('body').addClass('popOn');
 		$('.wrapper').attr('aria-hidden', 'true');
@@ -975,6 +975,7 @@ let lp = {
 		_pop.closest('.popwrap').attr({
 			'tabindex': '-1',
 			// 부모가 tabindex="-1"이고 자식이 tabindex="0"일 때 스크린리더읽을 수 있는지 확인하기!
+			// 자식포커스가 되는 건 확인.
 		}).css({'display': 'block', 'z-index': lp.zIdx++});
 	},
 	close: function(_this) {
