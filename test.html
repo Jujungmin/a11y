@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<style>
+		* {margin:0; padding:0;}
+		.container {margin:auto;}
+		.container .row {display:flex; flex-direction:row; flex-wrap:wrap; justify-content:space-between; margin:0 auto; width:600px;}
+		.container .col-sm {flex:0 0 calc(33.333% - 6px); padding:12px; border:1px solid #ddd; box-sizing:border-box;}
+		.container .col-sm:nth-child(n+4) {margin-top:24px;}
+		.container .col-sm img {display:block; max-width:100%; width:100%;}
+		.container .col-sm h5 {margin-top:12px; font-size:18px;}
+		.container .col-sm p {margin-top:6px; font-size:16px; color:#888; text-align:right;}
+
+		.area-btn {text-align:center; margin-top:40px;}
+		.btn {padding:0 20px; display:inline-block; min-width:100px; height:50px; line-height:50px; text-align:center; background:rgba(255,0,0,0.5); outline:0; border:0; font-size:16px; cursor:pointer;}
+		button:disabled {background:#ddd; cursor:initial;}
+
+		/* .form-hide {display:none;} */
+	</style>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<!-- <div class="col-sm">
+			<img src="https://via.placeholder.com/600" alt="" class="w-100">
+			<h5>Card title</h5>
+			<p>가격 : 0</p>
+		</div> -->
+	</div>
+
+	<script>
+		var porducts = [
+			{ id: 0, price: 70000, title: 'Blossom Dress' },
+			{ id: 1, price: 50000, title: 'Springfield Shirt' },
+			{ id: 2, price: 60000, title: 'Black Monastery' },
+		]
+
+		// 자바스크립트로 html 생성해서 상품목록 3개만들기
+		porducts.forEach(function(item) {
+			var temp =
+			`<div class="col-sm">
+					<img src="https://via.placeholder.com/600" alt="" class="w-100">
+					<h5>${item.title}</h5>
+					<p>가격 : ${item.price}</p>
+				</div>`;
+			$('.row').append(temp);
+		})
+	</script>
+
+	<div class="area-btn">
+		<button type="button" class="btn" id="more">더보기</button>
+	</div>
+
+	<script>
+		let moreClick = 0; // 마우스 클릭 횟수
+
+		$('#more').click(function() {
+			moreClick += 1;
+			$.get('https://codingapple1.github.io/js/more1.json')
+			.done((data) => {
+				// console.log(data);
+				data.forEach(item => {
+					var temp =
+					`<div class="col-sm">
+							<img src="https://via.placeholder.com/600" alt="" class="w-100">
+							<h5>${item.title}</h5>
+							<p>가격 : ${item.price}</p>
+						</div>`;
+					$('.row').append(temp);
+				})
+			})
+		})
+	</script>
+
+</div>
+
+
+<script>
+
+// 받을 때
+// $.get는 JSON을 object로 자동 변환.
+$.get('https://codingapple1.github.io/price.json')
+	.done(function(data) {
+		console.log(data); // 서버에서 실제로 받은 데이터
+		// console.log(data.price);
+	})
+	.fail(function() {
+		console.log('실패함')
+	})
+
+	// 브라우저 기본함수 fetch써도 ajax가능
+	/* 
+	- 서버와 유저는 문자자료만 주고받을 수 있음.
+	- objct, array보내고 싶으면 따옴표쳐서 문자처럼 만들어야한다. {"price" : 5000} <= JSON
+	*/
+	fetch('https://codingapple1.github.io/price.json')
+		.then(res => res.json()) // 받아온 JSON은 object로 바꿔주는 기능
+		.then(data => {
+			console.log(data);
+		})
+		.catch(erro => {
+			console.log(error);
+		})
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
