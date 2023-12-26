@@ -8,15 +8,17 @@
 	<style>
 		* {margin:0; padding:0;}
 		.container {margin:auto;}
-		.container .row {display:flex; flex-direction:row; flex-wrap:wrap; justify-content:space-between; margin:0 auto; width:600px;}
-		.container .col-sm {flex:0 0 calc(33.333% - 6px); padding:12px; border:1px solid #ddd; box-sizing:border-box;}
-		.container .col-sm:nth-child(n+4) {margin-top:24px;}
+		.container .row {display:flex; flex-direction:row; flex-wrap:wrap; justify-content:flex-start; margin:auto; width:600px;}
+		.container .col-sm {flex:0 0 calc(33.333% - 36px); padding:12px; border:1px solid #ddd; margin-left:12px;}
+		.container .col-sm:nth-child(3n+1) {margin-left:0;} /* 0,3,6 */
+		.container .col-sm:nth-child(n+4) {margin-top:12px;}
 		.container .col-sm img {display:block; max-width:100%; width:100%;}
 		.container .col-sm h5 {margin-top:12px; font-size:18px;}
 		.container .col-sm p {margin-top:6px; font-size:16px; color:#888; text-align:right;}
 
 		.area-btn {text-align:center; margin-top:40px;}
-		.btn {padding:0 20px; display:inline-block; min-width:100px; height:50px; line-height:50px; text-align:center; background:rgba(255,0,0,0.5); outline:0; border:0; font-size:16px; cursor:pointer;}
+		.btn {padding:0 20px; display:inline-block; min-width:100px; height:34px; line-height:34px; text-align:center; background:rgba(255,0,0,0.5); outline:0; border:0; font-size:14px; cursor:pointer;}
+		.btn:hover {color:#fff;}
 		button:disabled {background:#ddd; cursor:initial;}
 
 		/* .form-hide {display:none;} */
@@ -41,19 +43,89 @@
 		]
 
 		// 자바스크립트로 html 생성해서 상품목록 3개만들기
-		porducts.forEach(function(item) {
-			var temp =
+		// porducts.forEach(function(item) {
+		// 	var temp =
+		// 	`<div class="col-sm">
+		// 			<img src="https://via.placeholder.com/600" alt="" class="w-100">
+		// 			<h5>${item.title}</h5>
+		// 			<p>가격 : ${item.price}</p>
+		// 		</div>`;
+		// 	$('.row').append(temp);
+		// })
+
+		var 어레이 = [7,3,5,2,40];
+		var 어레이2 = ['가', '다', '나'];
+		// 문자정렬 array.sort();
+		/*
+		* a, b는 array 안의 자료임
+		* return 오른쪽이 양수면 a를 오른쪽으로
+		* return 오른쪽이 음수면 b를 오른쪽으로
+		*/
+		어레이2.sort(function(a,b) {
+			return a < b ? -1 : a > b ? 1 : 0;
+		})
+		// 어레이2.sort().reverse();
+		console.log(어레이2);
+		
+
+		어레이.sort((function(a,b) {
+			return b - a;
+		}));
+
+		var 새어레이 = 어레이.filter(function(a) {
+			return a < 4;
+		});
+
+		console.log(새어레이);
+
+
+		/*
+		 * .sort() 원본 변형 O
+		 * .filter() 원본 변형 X
+		 * .map() array 자료 전부 변형하기
+		*/
+
+		porducts.forEach((item) => {
+		var temp =
 			`<div class="col-sm">
 					<img src="https://via.placeholder.com/600" alt="" class="w-100">
 					<h5>${item.title}</h5>
 					<p>가격 : ${item.price}</p>
+					<button class="buy">구매</button>
 				</div>`;
 			$('.row').append(temp);
+		});
+
+		// var arr = [1,2,3];
+		// var newArr = JSON.stringify(arr);
+		// localStorage.setItem('num', newArr);
+		// var 꺼낸거 = localStorage.getItem('num');
+		// console.log(JSON.parse(꺼낸거)[0])
+
+		$('.buy').click(function(e) {
+			var title = $(e.target).siblings('h5').text();
+			
+			
+			if(localStorage.getItem('cart') != null) { // 빈값이 아니고
+				var 꺼낸거 = localStorage.getItem('cart');
+				console.log(꺼낸거)
+				꺼낸거 = JSON.parse(꺼낸거);
+				꺼낸거.push(title);
+				localStorage.setItem('cart', JSON.stringify(꺼낸거));
+				
+			} else { // 빈값일 때 넣기
+				localStorage.setItem('cart', JSON.stringify([title]));
+			}
 		})
+
+
 	</script>
 
 	<div class="area-btn">
 		<button type="button" class="btn" id="more">더보기</button>
+		<button type="button" class="btn" id="price">가격순정렬</button>
+		<button type="button" class="btn" id="name">다가나순정렬</button>
+		<button type="button" class="btn" id="price2">6만원이하상품보기</button>
 	</div>
 
 	<script>
@@ -61,18 +133,85 @@
 
 		$('#more').click(function() {
 			moreClick += 1;
-			$.get('https://codingapple1.github.io/js/more1.json')
-			.done((data) => {
-				// console.log(data);
-				data.forEach(item => {
-					var temp =
-					`<div class="col-sm">
-							<img src="https://via.placeholder.com/600" alt="" class="w-100">
-							<h5>${item.title}</h5>
-							<p>가격 : ${item.price}</p>
-						</div>`;
-					$('.row').append(temp);
+			if(moreClick === 1) {
+				$.get('https://codingapple1.github.io/js/more1.json')
+				.done((data) => {
+					data.forEach(item => {
+						var temp =
+						`<div class="col-sm">
+								<img src="https://via.placeholder.com/600" alt="" class="w-100">
+								<h5>${item.title}</h5>
+								<p>가격 : ${item.price}</p>
+							</div>`;
+						$('.row').append(temp);
+					})
 				})
+			} else if (moreClick === 2) {
+				$.get('https://codingapple1.github.io/js/more2.json')
+				.done((data) => {
+					data.forEach(item => {
+						var temp =
+						`<div class="col-sm">
+								<img src="https://via.placeholder.com/600" alt="" class="w-100">
+								<h5>${item.title}</h5>
+								<p>가격 : ${item.price}</p>
+							</div>`;
+						$('.row').append(temp);
+					})
+				})
+			} else {
+				moreClick = 0;
+				$(this).css('display', 'none');
+			}
+		})
+
+		$('#price').click(function() {
+			porducts.sort(function(a,b) {
+				return a.price - b.price;
+			})
+			$('.row').html('');
+			porducts.forEach((item) => {
+			var temp =
+				`<div class="col-sm">
+						<img src="https://via.placeholder.com/600" alt="" class="w-100">
+						<h5>${item.title}</h5>
+						<p>가격 : ${item.price}</p>
+					</div>`;
+				$('.row').append(temp);
+			})
+		});
+
+		// 숙제1. 상품명 다나가순 정렬 버튼과 기능
+		$('#name').click(function() {
+			porducts.sort(function(a,b) {
+				return a.title > b.title ? -1 : a.title < b.title ? 1 : 0;
+			});
+			$('.row').html('');
+			porducts.forEach((a,i) => {
+			var temp =
+				`<div class="col-sm">
+						<img src="https://via.placeholder.com/600" alt="" class="w-100">
+						<h5>${porducts[i].title}</h5>
+						<p>가격 : ${porducts[i].price}</p>
+					</div>`;
+				$('.row').append(temp);
+			})
+		})
+		
+		// 숙제2. 6만원이하 상품만 보기 버튼과 기능
+		$('#price2').click(function() {
+			var sortPrd = porducts.filter(function(item) {
+				return item.price <= 60000;
+			});
+			$('.row').html('');
+			sortPrd.forEach((item) => {
+			var temp =
+				`<div class="col-sm">
+						<img src="https://via.placeholder.com/600" alt="" class="w-100">
+						<h5>${item.title}</h5>
+						<p>가격 : ${item.price}</p>
+					</div>`;
+				$('.row').append(temp);
 			})
 		})
 	</script>
@@ -86,11 +225,11 @@
 // $.get는 JSON을 object로 자동 변환.
 $.get('https://codingapple1.github.io/price.json')
 	.done(function(data) {
-		console.log(data); // 서버에서 실제로 받은 데이터
+		// console.log(data); // 서버에서 실제로 받은 데이터
 		// console.log(data.price);
 	})
 	.fail(function() {
-		console.log('실패함')
+		// console.log('실패함')
 	})
 
 	// 브라우저 기본함수 fetch써도 ajax가능
@@ -101,10 +240,10 @@ $.get('https://codingapple1.github.io/price.json')
 	fetch('https://codingapple1.github.io/price.json')
 		.then(res => res.json()) // 받아온 JSON은 object로 바꿔주는 기능
 		.then(data => {
-			console.log(data);
+			// console.log(data);
 		})
 		.catch(erro => {
-			console.log(error);
+			// console.log(error);
 		})
 
 
