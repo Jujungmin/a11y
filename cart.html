@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>장바구니목록</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-    <div>장바구니 페이지</div>
-    <p clas="prd">상품명</p>
+    <div class="basket">장바구니 페이지</div>
     <script>
-        console.log(localStorage.getItem('cart'))
+        var getPrd = localStorage.getItem('basket');
+        getPrd = JSON.parse(getPrd);
+
+        getPrd.forEach(element => {
+            $('.basket').append(`<div class="prd">${element}</div>`);
+        });
     </script>
 </body>
 </html>
