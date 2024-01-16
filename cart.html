@@ -7,14 +7,20 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class="basket">장바구니 페이지</div>
+    <div class="basket">장바구니 리스트</div>
     <script>
-        var getPrd = localStorage.getItem('basket');
+        var getPrd = localStorage.getItem('cart');
         getPrd = JSON.parse(getPrd);
+        console.log(getPrd)
+        if(getPrd !== null) {
+            getPrd.forEach((ele,idx) => {
+                var temp = `<p class="list">${ele}</p>`;
+                $('.basket').append(temp);
+            });
+        } else {
+            $('.basket').append(`<p>장바구니가 비었습니다</p>`);
+        }
 
-        getPrd.forEach(element => {
-            $('.basket').append(`<div class="prd">${element}</div>`);
-        });
     </script>
 </body>
 </html>
