@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>한국교직원공제회 | 제휴카드</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta content="site" name="title">
+	<meta name="keywords" content="site, site keywords">
+	<meta name="copyright" content="site copyright.">
+
+	<link rel="Shortcut Icon" href="../../image/common/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../../css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="../../css/swiper.css">
+	<link rel="stylesheet" type="text/css" href="../../css/m_common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/m_content.css">
+	
+	<script src="../../js/lib/jquery.js"></script>
+	<script src="../../js/lib/jquery-ui.min.js"></script>
+	<script src="../../js/lib/swiper.min.js"></script>
+	<script src="../../js/uiux/m_front.js"></script>
+	<style>
+		.blind {display:inline-block; position:absolute !important; width:1px; height:1px; margin:-1px; border:0; overflow:hidden; clip:rect(1px, 1px, 1px, 1px); clip-path:inset(50%);}
+	</style>
+</head>
+<body>
+<!-- wrapper(s) -->
+<div class="wrapper page-pi">
+	<header class="header">
+		<div id="gnb">
+			<!-- 이전페이지로이동 버튼 베너 랜드마크 -->
+			<button type="button" class="head-btn-prev"><span class="blind">이전 페이지로 이동</span></button>
+			<!-- 제휴카드 머리말 레벨 1 -->
+			<h1 class="tit-h1">제휴카드</h1>
+			<!-- 전체메뉴열기 버튼 and 배너 -->
+			<button type="button" class="head-btn-menu"><span class="blind">전체 메뉴 열기</span></button>
+		</div>
+	</header>
+
+	<div id="content"><!-- content(s) -->
+	    <div class="page-tit tit-fixed">
+			<div class="container" role="article">
+				<div class="wrap-process">
+					<!-- 3번단계중 2번째 단계 이미지 기사 랜드마크 -->
+					<div class="pro-bar" role="img" aria-label="3번 단계 중 2번째 단계입니다."><!-- 23.11.06 : "aria-hidden"삭제 / "role, aira-label" 속성 추가 -->
+						<div class="bar" style="width:50%;"></div>
+					</div>
+					<!-- 2 슬래시 3 and 기사 -->
+					<div class="pro-num"><em>2</em>&nbsp;/&nbsp;3</div><!-- 23.11.06 : "aria-label"위치변경 -->
+				</div>
+			</div>
+			<h2 class="tit-h2">카드발급을 위해 <br>약관에 동의해주세요</h2>
+			<!-- 카드발급을 위해 머리말 레벨2 -->
+			<!-- 약관에동의해주세요 레벨2 -->
+		</div>
+		<div class="page-cont">
+            <section>
+				<!-- 약관동의 머리말 레벨3 -->
+				<h3 class="blind">약관 동의</h3>
+                <div class="container" role="article">
+					<div class="area-tit">
+						<!-- 신청카드 머리말 레벨4 기사 랜드마크 -->
+                        <h4 class="tit-h5">신청 카드</h4>
+                    </div>
+					<div class="card-info-box">
+						<div class="card">
+							<img src="../../images/content/img_card_hana.png" alt=""> <!-- 23.11.06 : alt 값 삭제 -->
+							<span class="desc">하나 교직원<br> 복지카드</span> <!-- 하나교직원 / 복지카드 -->
+						</div>
+						<div class="card">
+							<img src="../../images/content/img_card_shinhan.png" alt=""> <!-- 23.11.06 : alt 값 삭제 -->
+							<span class="desc">신한 교직원<br> 복지카드</span>
+						</div>
+					</div>
+				</div>
+				<div class="container" role="article">
+					<div class="wrap-agree">
+						<div class="agree-chk dep acc-chk-none">
+							<div class="chk-tit"> <!-- 23.08.02 : 약관 공통 반영 -->
+								<!-- 필수개인정보제공동의 체크상자 선택해제됨 기사 랜드마크 새창열림 설정을 끄거나키려면 이중탭하십시오 => 개인정보제공동의 앤드 기사 -->
+								<!-- aria-label :: 새창열림 체크상자 선택해제됨 기사 랜드마크 설정을끄거나키려면이중탭하십시오 => 필수 => 개인정보제공동의 앤드 기사 -->
+								<input type="checkbox" name="ckE" id="ckE1" value="" class="ipt round" title="새창열림"> <!-- 23.08.14 : title label > input으로 이동 / 23.10.17 : title 수정 -->
+								<label for="ckE1"><span color="color-point1">[필수]</span> 개인정보 제공 동의</label> <!-- 23.08.14 : 약관명 수정 -->
+                            </div>
+						</div>
+					</div>
+				</div>
+            </section>
+            <div class="area-btn sticky">
+                <button type="button" class="kbtn-p">다음</button>
+            </div>
+        </div>
+	</div><!-- content(e) -->
+
+	
+</div><!-- wrapper(e) -->
+
+
+<script>
+$(document).ready(function(){
+	//addStiky('.page-tit'); 23.09.06 : 함수호출 삭제
+});
+</script>
+
+</body>
+</html>

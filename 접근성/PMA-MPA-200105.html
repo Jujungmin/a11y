@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>한국교직원공제회 | 마이페이지</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta content="site" name="title">
+	<meta name="keywords" content="site, site keywords">
+	<meta name="copyright" content="site copyright.">
+
+	<link rel="Shortcut Icon" href="../../image/common/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../../css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="../../css/swiper.css">
+	<link rel="stylesheet" type="text/css" href="../../css/m_common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/m_content.css">
+	
+	<script src="../../js/lib/jquery.js"></script>
+	<script src="../../js/lib/jquery-ui.min.js"></script>
+	<script src="../../js/lib/swiper.min.js"></script>
+	<script src="../../js/uiux/m_front.js"></script>
+    <style>
+        .blind {display:inline-block; position:absolute !important; width:1px; height:1px; margin:-1px; border:0; overflow:hidden; clip:rect(1px, 1px, 1px, 1px); clip-path:inset(50%);}
+    </style>
+</head>
+<body>
+<!-- wrapper(s) -->
+<div class="wrapper page-pi">
+	<header class="header">
+		<div id="gnb">
+			<button type="button" class="head-btn-prev"><span class="blind">이전 페이지로 이동</span></button>
+			<h1 class="tit-h1">장기저축급여 증/감좌 신청</h1>
+			<!-- <button type="button" class="head-btn-txt">취소</button> 23.08.11 : 삭제 -->
+            <button type="button" class="head-btn-menu"><span class="blind">전체 메뉴 열기</span></button> <!-- 23.08.11 : 수정 -->
+		</div>
+	</header>
+
+	<div id="content"><!-- content(s) -->
+		<!-- 23.04.21 : .wrap-process 삭제 -->
+        <div class="page-tit tit-fixed"> <!-- 23.06.13 : .page-tit 영역 추가 -->
+			<h2 class="tit-h2">변경 내용을 입력해주세요 </h2> 
+		</div>
+        <div class="page-cont">
+			<h2 class="blind">신청서작성</h2>
+			<section>
+				<div class="container" role="article">
+				    <!-- 23.06.13 : 삭제 <div class="area-list-data msg-price">
+                        <ul class="list-data">
+                            <li>
+                                <span class="item">가입금액</span>
+                                <span class="val color-point1"><em>210,000</em>원</span>
+                            </li>
+                            <li>
+                                <span class="item">가입구좌</span>
+                                <span class="val">350구좌</span>
+                            </li>
+                        </ul>
+                    </div> -->
+                    <ul class="list-tbl-info rate color-bg-wh"> <!-- 23.06.13 : 마크업 전체 수정 -->
+                        <li>
+                            <span class="item">가입 금액</span>
+                            <span class="val">
+                                <span>210,000원</span>
+                            </span>
+                            <span class="txt">350구좌</span>
+                        </li>
+                    </ul>
+				</div>
+				<div class="container" role="article"><!-- 23.05.23 : (공통)"container"하위 객체 삭제 -->
+					<div class="area-form">
+                        <!-- 신청종류 기사 랜드마크 -->
+                        <div class="label">신청 종류</div>
+                        <ul class="area-ipt-btn div-col2">
+                            <li>
+                                <!-- 증액(증좌) 선택버튼 선택해제됨 총2개중1번째 -->
+                                <input type="radio" name="rdA" id="radio_A1" value="" class="ipt">
+                                <label for="radio_A1">증액(증좌)</label>
+                            </li>
+                            <li>
+                                <!-- 감액(감좌) 선택버튼 선택해제됨 총2개중2번째 -->
+                                <input type="radio" name="rdA" id="radio_A2" value="" class="ipt">
+                                <label for="radio_A2">감액(감좌)</label>
+                            </li>
+                        </ul>
+
+						<div class="label">신청 금액</div>
+						<div class="area-btn-won col4">
+                            <!-- 더하기버튼6만원 선택해제됨 -->
+							<button type="button" class="kbtn-won">+6만원</button>
+							<button type="button" class="kbtn-won">+30만원</button>
+							<button type="button" class="kbtn-won">+90만원</button>
+							<button type="button" class="kbtn-won">최대</button>
+						</div>
+                        <!-- 신청금액육천원단위로입력 육천원단위로입력 텍스트필드 편집하려면이중탭 -->
+						<input type="number" name="price-1" id="price-1" value="" class="ipt won1" placeholder="6,000원 단위로 입력" title="신청 금액 6,000원 단위로 입력" pattern="\d*"> <!-- 23.09.13 : ios 숫자 키패드 "pattern"추가 및 type="number"로 수정 / 23.10.13 : title 수정 / 23.10.31 : title 수정 -->
+                        <!-- 원 -->
+						<span class="txt-won">원</span>
+						<p class="txt-form won"><em class="bold">500</em> 구좌</p>
+						<ul class="list-txt-disc small"> <!-- 23.08.11 : p > ul로 수정 -->
+                            <li>최저 3만원(50구좌) ~ 150만원(2,500구좌)까지 6,000원(10구좌) 단위로 신청 가능</li> <!-- 23.04.25 : 텍스트수정 -->
+                        </ul>
+
+						<!-- 잘못된 금액을 입력한 경우(s) -->
+                        <input type="number" name="price-1" id="price-1" value="1,584,752" class="ipt won1 error" placeholder="6,000원 단위로 입력" title="신청 금액 6,000원 단위로 입력" pattern="\d*"> <!-- 23.09.13 : ios 숫자 키패드 "pattern"추가 및 type="number"로 수정 / 23.10.31 : title 수정 -->
+						<span class="txt-won">원</span>
+						<div class="error-box">
+							<p class="txt-form error">$1,584,752원$은 구좌에 맞는 금액이 아닙니다.</p>
+                            <!-- 구좌에 맞는 금액으로 자동 갱신 버튼 -->
+							<button type="button" class="btn-form-reset">구좌에 맞는 금액으로 자동 갱신</button>
+						</div>
+                        <!-- 잘못된 금액을 입력한 경우(e) -->
+
+						<div class="label">
+						    총 가입금액
+                            <div class="tooltip layer">
+                                <!-- 도움말열기 버튼 -->
+                                <strong class="tit">총 가입금액</strong>
+                                <ul class="list-txt-disc tip">
+                                    <!-- 증액(증좌) : 가입금액 더하기 신청금액 -->
+                                    <li>증액(증좌) : 가입금액 + 신청금액</li>
+                                    <!-- 감액(감좌) : 가입금액 (빼기못읽네) 신청금액 -->
+                                    <li>감액(감좌) : 가입금액 - 신청금액</li>
+                                </ul>
+                                <!-- 도움말닫기 버튼 -->
+                            </div>
+						</div>
+                        <!-- 총가입금액확인 흐리게표시됨 텍스트필드 읽기전용 로터를사용하여맞춤법오류단어에연결 -->
+						<input type="number" name="price-2" id="price-2" value="210,000" class="ipt won1" placeholder="" title="총 가입금액 확인" readonly="readonly" disabled="disabled" pattern="\d*"> <!-- 23.09.13 : ios 숫자 키패드 "pattern"추가 및 type="number"로 수정 / 23.10.13 : title 수정 -->
+						<span class="txt-won">원</span>
+						<p class="txt-form won"><em class="bold">350</em> 구좌</p>
+					</div>
+                </div>
+                <div class="container" role="article">
+                    <div class="area-tit">
+                        <h4 class="tit-h5">신청자 정보</h4>
+                        <!-- 23.06.13 : 삭제 <a href="#" class="kbtn-link">회원정보 수정</a> 23.04.21 : 텍스트 수정 -->
+                    </div>
+                    <div class="area-list-data">
+                        <ul class="list-data"> <!-- 23.08.11 : 마스킹 삭제 -->
+                            <li>
+                                <span class="item">이름</span>
+                                <span class="val">김*원</span> <!-- 23.09.12 : 마스킹 적용 -->
+                            </li>
+                            <li>
+                                <span class="item">휴대폰</span> <!-- 23.06.13 : 텍스트 수정 -->
+                                <!-- 마이너스라고읽네 -->
+                                <span class="val">010-****-5678</span> <!-- 23.09.12 : 마스킹 적용 -->
+                            </li>
+                            <li>
+                                <span class="item">이메일</span>
+                                <span class="val">kt**@ktcu.or.kr</span> <!-- 23.09.12 : 마스킹 적용 -->
+                            </li>
+                            <li>
+                                <span class="item">주소</span><!-- 23.04.21 : 텍스트 수정 -->
+                                <span class="val">
+                                    <span class="disp-b">(12345)</span>
+                                    <span class="disp-b">서울특별시 영등포구 국회로</span> <!-- 23.09.12 : 마스킹 적용 -->
+                                    <span class="disp-b">********</span>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="item">소속기관</span>
+                                <span class="val">의림초등학교</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="area-btn-txt"> <!-- 23.06.13 : 개인정보변경 영역 추가 -->
+                        <!-- 개인정보변경 링크 앤드 기사 -->
+                        <a href="#" class="kbtn-link">개인정보 변경</a>
+                    </div>
+                </div>
+				<!-- 23.06.13 : 삭제 <div class="container" role="article">
+					<div class="area-form">
+                        <div class="label">신청서 수령</div> 23.04.21 : 텍스트 수정, .account추가, 수령 > 알림톡(SMS)로 수정
+                        <ul class="area-ipt-btn div-col2 account">
+                            <li>
+                                <input type="radio" name="rdB" id="radio_B1" value="" class="ipt">
+                                <label for="radio_B1">알림톡<span>(SMS)</span></label>
+                            </li>
+                            <li>
+                                <input type="radio" name="rdB" id="radio_B2" value="" class="ipt">
+                                <label for="radio_B2">미수령</label>
+                            </li>
+                        </ul>
+                    </div>
+				</div> -->
+			</section>
+			<div class="area-btn sticky">
+				<button type="button" class="kbtn-p">다음</button>
+			</div>
+		</div>
+	</div><!-- content(e) -->
+
+
+
+
+
+    <footer class="footer">
+        <div class="footer-notice">
+            <!-- 공지 콘텐츠정보 랜드마크 -->
+            <strong class="tit">공지</strong>
+            <span class="info"><a href="#">한국교직원공제회 대여이율 상향 한국교직원공제회 대여이율 상향</a></span>
+            <!-- 공지사항더보기 링크 -->
+            <a href="#" class="btn-more"><span class="blind">공지사항 더보기</span></a> <!-- 23.11.06 : 텍스트 수정 -->
+        </div>
+	    <div class="footer-top">
+            <div class="list-call">
+                <ul>
+                    <li><span class="item">회원상담</span> <a href="tel:1577-3400" title="회원상담 전화걸기" class="tel">1577-3400</a></li>
+                    <!-- 1577-3400 링크 회원상담전화걸기 -->
+                    <li><span class="item">보험가입상담</span> <a href="tel:1577-3993" title="보험가입상담 전화걸기" class="tel">1577-3993</a></li> <!-- 23.11.28 : 전화번호 수정 -->
+                </ul>
+                <p class="info">운영시간: 평일 09:00~18:00</p>
+            </div>
+        </div>
+	    <div class="footer-bot">
+            <div class="list-menu">
+                <ul>
+                    <li><a href="#">일반신고</a></li>
+                    <li><a href="#">부패공익신고</a></li>
+                    <li><a href="#"><strong class="color-point1">개인정보처리방침</strong></a></li>
+                    <!-- 이용약관 링크 다운로드 -->
+                    <li><a href="#" title="다운로드">이용약관</a></li> <!-- 23.11.06 : title 추가 -->
+                </ul>
+            </div>
+            <div class="address">
+                <address>07328 서울 영등포구 여의나루로 50(여의도동 35-3) <span>The-K한국교직원공제회</span></address>
+                <p class="copy">Copyright©2023 KTCU. ALL RIGHTS RESERVED.</p><!-- 23.09.01 : 텍스트 수정 -->
+            </div>
+            <div class="footer-acc">
+                <!-- 펼쳐보기 버튼 앤드 콘텐츠 정보 -->
+                <div class="acc-inner">
+                    <div class="list-link">
+                        <ul> <!-- 23.10.17 : title 추가(일괄) -->
+                            <li><a href="#" target="_blank" title="새창열림">법인</a></li>
+                            <!-- 대한민국스승상 링크 새창열림 -->
+                            <li><a href="https://award.ktcu.or.kr" target="_blank" title="새창열림">대한민국스승상</a></li>
+                            <li><a href="https://english.ktcu.or.kr" target="_blank" title="새창열림">ENGLISH</a></li>
+                            <li><a href="#" target="_blank" title="새창열림">공제회소개</a></li>
+                            <li><a href="#" target="_blank" title="새창열림">본부 및 지부안내</a></li>
+                            <li><a href="#" target="_blank" title="새창열림">인증센터</a></li>
+                        </ul>
+                    </div>
+                    <div class="list-sns">
+                        <ul> <!-- 23.10.17 : title 추가(일괄) / 23.11.06 : a태그 전체 title수정 + blind삭제 --> <!-- 23.11.21 : title > aria-label 속성으로 수정 -->
+                            <!-- 한국교직원블로그새창열림 링크 -->
+                            <li class="sns1"><a href="https://m.blog.naver.com/ktcu_attic" target="_blank" aria-label="한국교직원공제회 블로그 새창열림"><i class="icon"></i></a></li>
+                            <li class="sns2"><a href="https://m.post.naver.com/ktcu_attic" target="_blank" aria-label="한국교직원공제회 포스트 새창열림"><i class="icon"></i></a></li>
+                            <li class="sns3"><a href="https://m.youtube.com/user/withKTCU" target="_blank" aria-label="한국교직원공제회 유튜브 새창열림"><i class="icon"></i></a></li>
+                            <li class="sns4"><a href="https://m.facebook.com/withKTCU" target="_blank" aria-label="한국교직원공제회 페이스북 새창열림"><i class="icon"></i></a></li>
+                        </ul>
+                        <ul> <!-- 23.10.17 : title 추가(일괄) / 23.11.06 : a태그 전체 title수정 + blind삭제 --> <!-- 23.11.21 : title > aria-label 속성으로 수정 -->
+                            <li class="sns5"><a href="https://www.instagram.com/withktcu" target="_blank" aria-label="한국교직원공제회 인스타그램 새창열림"><i class="icon"></i></a></li>
+                            <li class="sns6"><a href="https://pf.kakao.com/_UCxjnd" target="_blank" aria-label="한국교직원공제회 카카오톡 새창열림"><i class="icon"></i></a></li>
+                            <li class="sns7"><a href="#" target="_blank" aria-label="한국교직원공제회 뉴스레터 새창열림"><i class="icon"></i></a></li>
+                            <li class="sns8"><a href="http://www.thekmagazine.co.kr/data/theK_2301/main.php" target="_blank" aria-label="한국교직원공제회 매거진 새창열림"><i class="icon"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="list-mark">
+                        <ul>
+                            <li class="mark1">
+                                <i class="icon"></i>
+                                <span class="desc">공정거래위원회 주관<br>소비자중심경영(CCM)인증</span>
+                            </li>
+                            <li class="mark2">
+                                <i class="icon"></i>
+                                <span class="desc">한국경제신문 주관<br>제6회 한국 기금 &middot; 자산운용 대상 최우수상</span><!-- 23.09.01 : 오타수정 -->
+                            </li>
+                            <li class="mark3">
+                                <i class="icon"></i>
+                                <span class="desc">한국지속가능평가원 주관<br>제10회 국가지속가능경영대상 수상</span>
+                            </li>
+                            <!-- 과학기술정보통신부 주관웹접근성품질마크 인증 링크 새창열림
+                            예는 br패스 -->
+                            <li class="mark4">
+                                <a href="#" target="_blank" title="새창열림"> <!-- 23.10.17 : title 추가 -->
+                                    <i class="icon"></i>
+                                    <span class="desc">과학기술정보통신부 주관<br>웹접근성품질마크 인증</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 닫기 버튼 앤드 콘텐츠정보 -->
+                <button type="button" class="btn-foot-acc">닫기</button>
+            </div>
+        </div>
+	</footer>
+
+
+
+</div><!-- wrapper(e) -->
+
+<script>
+$(document).ready(function(){
+    // 23.06.13 : addSticky 추가 
+    //addStiky('.page-tit'); // 23.09.06 : addStiky 삭제
+});
+</script>
+
+</body>
+</html>

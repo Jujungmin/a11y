@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>한국교직원공제회 | 금융상품</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta content="site" name="title">
+	<meta name="keywords" content="site, site keywords">
+	<meta name="copyright" content="site copyright.">
+
+	<link rel="Shortcut Icon" href="../../image/common/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../../css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="../../css/swiper.css">
+	<link rel="stylesheet" type="text/css" href="../../css/m_common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/m_content.css">
+	
+	<script src="../../js/lib/jquery.js"></script>
+	<script src="../../js/lib/jquery-ui.min.js"></script>
+	<script src="../../js/lib/swiper.min.js"></script>
+	<script src="../../js/uiux/m_front.js"></script>
+	<style>
+		.blind {display:inline-block; position:absolute !important; width:1px; height:1px; margin:-1px; border:0; overflow:hidden; clip:rect(1px, 1px, 1px, 1px); clip-path:inset(50%);}
+	</style>
+</head>
+<body>
+<!-- wrapper(s) -->
+<div class="wrapper page-pi">
+	<header class="header">
+		<div id="gnb">
+			<button type="button" class="head-btn-prev"><span class="blind">이전 페이지로 이동</span></button>
+			<h1 class="tit-h1">목돈급여</h1> <!-- 23.08.18 : 타이틀 수정 -->
+			<!-- 취소 버튼 and 배너 -->
+			<button type="button" class="head-btn-txt">취소</button>
+		</div>
+	</header>
+
+	<div id="content"><!-- content(s) -->
+		<div class="page-tit tit-fixed">
+			<div class="container" role="article">
+				<!-- 23.04.24 : process 영역 수정 -->
+				<!-- 왜수정했는지 확인해보기 -->
+				<div class="wrap-process">
+					<div class="pro-bar" aria-hidden="true">
+						<div class="bar" style="width:60%;"></div>
+					</div>
+					<!-- 3 기사 랜드마크 -->
+					<!-- 슬래시 다섯 앤드 기사 -->
+					<div class="pro-num" aria-label="5번 단계 중 3번째 단계입니다."><em>3</em>&nbsp;/&nbsp;5</div>
+				</div>
+				 <!-- 23.08.18 : 삭제 -->
+			</div>
+			<h2 class="tit-h2">서류를 제출해 주세요</h2>
+		</div>
+		<div class="page-cont">
+			<section>
+				<h3 class="blind">증빙서류 제출</h3>
+				<div class="container" role="article"> <!-- 23.08.18 : 위치 이동 -->
+					<div class="wrap-agree"><!-- 23.06.15 : 타이틀 삭제 후 약관영역 전체수정 / 23.08.02 : 약관 공통 반영 -->
+						<div class="agree-chk dep"> <!-- 23.10.17 : title 수정(일괄) -->
+							<div class="chk-tit">
+								<input type="checkbox" name="ckB" id="chk_1_all" value="" class="ipt round" title="새창열림"> <!-- 23.10.17 : aria-label 삭제 -->
+                                <label for="chk_1_all"><span class="color-point1">[필수]</span> 개인(신용)정보 수집 &middot; 이용 동의</label>
+								<button type="button" class="agree-btn-acc"><span class="blind">내용보기</span></button>
+							</div>
+							<ul class="chk-dep">
+								<li>
+									<input type="checkbox" name="ckB1_dep2" id="ckB1_dep2_1" value="" class="ipt dep2" title="새창열림">
+									<label for="ckB1_dep2_1">개인(신용)정보 수집 &middot; 이용 동의</label>
+								</li>
+								<li>
+									<input type="checkbox" name="ckB1_dep2" id="ckB1_dep2_2" value="" class="ipt dep2" title="새창열림">
+									<label for="ckB1_dep2_2">민감정보 수집 &middot; 이용 동의</label>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="container" role="article"><!-- 23.06.15 : container 전체수정 -->
+					<!-- 제출서류(택1) 머리말레벨4 기사 랜드마크 -->
+					<h4 class="tit-h5">제출서류 (택1)</h4>
+					<!-- 장애인등록증 사본/복지카드 사본/ -->
+					<!-- 장애인증명서 사본 앤드 기사 -->
+					<div class="box-gud">
+                        장애인등록증 사본/복지카드 사본/<br> 장애인증명서 사본
+                    </div>
+					<!--  -->
+				</div>
+				<div class="container" role="article">
+                    <div class="area-tit">
+						<!-- 파일첨부 머리말레벨4 기사 랜드마크 -->
+                        <h4 class="tit-h5">파일 첨부</h4><!-- 23.06.15 : 텍스트 수정 -->
+                        <!-- <button type="button" class="kbtn-txt">전체삭제</button> 23.08.18 : 삭제 -->
+                    </div>
+                    <div class="fileupload">
+						<!-- 파일선택 선택한파일없음 버튼 -->
+                        <label for="uploadbtn">파일 선택</label> <!-- 23.04.24 : 텍스트 수정 -->
+                        <input type="file" id="uploadbtn" tabindex="0">
+                    </div>
+					<!-- 파일당최대용량 10mb -->
+					<p class="fileupload-size">파일당 최대 용량 <em class="bold">10MB</em></p> <!-- 23.08.18 : 수정 -->
+                    <ul class="fileupload-list">
+                        <li>
+                            <div class="file-box">
+								<!-- 해당첨부파일삭제 버튼 김교직재직증명서 -->
+                                <button type="button" class="uploadbtn-list" title="김교직 재직증명서"><span class="blind">해당 첨부파일 삭제</span></button> <!-- 23.11.08 : title 추가 -->
+								<!-- 김교직재직증명서jpg 앤드 기사 -->
+                                <span class="uploadbtn-name">김교직 재직증명서.jpg</span>
+                            </div>
+                        </li>
+                        <!-- <li>
+                            <div class="file-box">
+                                <button type="button" class="uploadbtn-list"><span class="blind">해당 첨부파일 삭제</span></button>
+                                <span class="uploadbtn-name">한교직 재직증명서.PDF</span>
+                            </div>
+                        </li> 23.08.18 : 삭제 -->
+                    </ul>
+                </div>
+			</section>
+			<section class="hr">
+				<div class="container" role="article">
+					<div class="area-tit">
+						<!-- 제출서류안내 머리말레벨3 기사 랜드마크 -->
+						<h3 class="tit-h4">제출 서류 안내</h3><!-- 23.06.15 : 텍스트 수정 및 ul > p변경 -->
+					</div>
+					<p class="com-txt">JPG, JPEG, PNG, GIF, BMP, TIF, PDF 형식만 가능합니다.</p>
+				</div>
+			</section>
+			<div class="area-btn sticky">
+				<!-- 다음 흐리게표시됨 버튼 -->
+				<!-- <button type="button" class="kbtn-p" disabled="disabled">다음</button> -->
+				<button type="button" class="kbtn-p" readonly>다음</button>
+			</div>
+		</div>
+	</div><!-- content(e) -->
+
+</div><!-- wrapper(e) -->
+
+<script>
+$(document).ready(function(){
+	//addStiky('.page-tit'); 23.09.06 : 함수호출 삭제
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>한국교직원공제회 | 마이페이지</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta content="site" name="title">
+	<meta name="keywords" content="site, site keywords">
+	<meta name="copyright" content="site copyright.">
+
+	<link rel="Shortcut Icon" href="../../image/common/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../../css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="../../css/swiper.css">
+	<link rel="stylesheet" type="text/css" href="../../css/m_common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/m_content.css">
+	
+	<script src="../../js/lib/jquery.js"></script>
+	<script src="../../js/lib/jquery-ui.min.js"></script>
+	<script src="../../js/lib/swiper.min.js"></script>
+	<script src="../../js/uiux/m_front.js"></script>
+	<style>
+		.blind {display:inline-block; position:absolute !important; width:1px; height:1px; margin:-1px; border:0; overflow:hidden; clip:rect(1px, 1px, 1px, 1px); clip-path:inset(50%);}
+		ol {list-style:none;}
+	</style>
+</head>
+<body>
+<!-- wrapper(s) -->
+<div class="wrapper page-pi">
+	<header class="header">
+		<div id="gnb">
+			<button type="button" class="head-btn-prev"><span class="blind">이전 페이지로 이동</span></button>
+			<h1 class="tit-h1">장기저축급여 증/감좌 신청</h1> <!-- 23.08.11 : 텍스트 수정 -->
+			<!-- <button type="button" class="head-btn-txt">취소</button> 23.08.11 : 삭제 -->
+			<button type="button" class="head-btn-menu"><span class="blind">전체 메뉴 열기</span></button> <!-- 23.08.11 : 수정 -->
+		</div>
+	</header>
+
+	<div id="content"><!-- content(s) -->
+		<div class="page-tit tit-fixed">
+			<h2 class="tit-h2">장기저축급여 증/감좌 신청을 <br>시작합니다</h2> <!-- 23.06.13 : 텍스트 수정 -->
+		</div>
+		<div class="page-cont">
+			<section>
+				<!-- 약관동의 머리말레벨3 -->
+				<h3 class="blind">약관 동의</h3> <!-- 23.08.02 : 약관 공통 반영 -->
+                <div class="container" role="article">
+                    <div class="wrap-agree ani"> <!-- 23.06.13 : .ani 클래스 추가 -->
+                        <div class="agree-chk dep"> <!-- 23.10.17 : title 수정(일괄) -->
+                            <div class="chk-tit"> <!-- 23.06.13 : 마크업 수정 -->
+								<!-- 왜삭제했을까? 체크상자 선택해제됨 기사 랜드마크 설정을끄거나키려면이중탭하십시오 -->
+                                <input type="checkbox" name="chk_2" id="chk_1_all" value="" class="ipt round" aria-label="왜삭제했을까?"> <!-- 23.10.17 : aria-label 삭제 -->
+								<label for="chk_1_all"><span>[선택]</span> 개인(신용)정보 수집 &middot; 이용 &middot; 제공 동의</label> <!-- 23.08.11 : 마크업 수정 -->
+								<button type="button" class="agree-btn-acc"><span class="blind">내용보기</span></button>
+                            </div>
+                            <ol class="chk-dep"> <!-- 23.06.13 : 마크업 수정 / 23.08.11 : 텍스트 수정 -->
+                                <!-- 23.06.13 : 삭제 <li>
+                                    <input type="checkbox" name="ckA3_dep2" id="ckA3_dep2_1" value="" class="ipt dep2">
+                                    <label for="ckA3_dep2_1"><em>[선택]</em> 개인(신용)정보 수집 &middot; 이용 동의</label>
+									<button type="button" class="agree-btn"><span class="blind">더보기</span></button>  23.05.03 : 버튼 추가 
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="ckA3_dep2" id="ckA3_dep2_2" value="" class="ipt dep2">
+                                    <label for="ckA3_dep2_2"><em>[선택]</em> 개인(신용)정보 수집 제공 동의</label> 23.04.21 : 텍스트 수정 
+									<button type="button" class="agree-btn"><span class="blind">더보기</span></button>  23.05.03 : 버튼 추가 
+                                </li> -->
+								<li>
+									<!-- 개인(신용)정보수집이용동의 체크상자 선택해제됨 새창열림 설정을끄거나켜려면 이중탭하십시오 -->
+									<input type="checkbox" name="ckC1_dep2" id="ckC1_dep2_1" value="" class="ipt dep2" title="새창열림">
+									<label for="ckC1_dep2_1">개인(신용)정보 수집 &middot; 이용 동의</label>
+								</li>
+								<li>
+									<!-- 새창열림 체크상자 선택해제됨 설정을끄거나키려면이중탭하십시오 -->
+									<!-- aria-label은 input다음에 label로 넘어가도록 한번더쓸어야된다 -->
+									<input type="checkbox" name="ckC1_dep2" id="ckC1_dep2_2" value="" class="ipt dep2" aria-label="새창열림">
+									<label for="ckC1_dep2_2">개인(신용)정보 제공 동의</label>
+								</li>
+								<li>
+									<input type="checkbox" name="ckC1_dep2" id="ckC1_dep2_3" value="" class="ipt dep2" title="새창열림">
+									<label for="ckC1_dep2_3">(출자회사 등 제3자) 광고성정보 전송 수신동의</label>
+								</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+			</section>
+			<div class="area-btn sticky">
+				<button type="button" class="kbtn-p">다음</button>
+			</div>
+		</div>
+	</div><!-- content(e) -->
+
+</div><!-- wrapper(e) -->
+
+<script>
+$(document).ready(function(){
+	//addStiky('.page-tit'); 23.09.06 : 함수호출 삭제
+});
+</script>
+
+</body>
+</html>

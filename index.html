@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<button type="button" id="test">버튼</button>
+	<script>
+		function Person() {
+			this.name = 'Kim';
+			this.age = 10,
+			this.sayHi = function() {
+				console.log(this.name + '님 안녕하세요.');
+			}
+		}
+		Person.prototype.name = 'Park';
+		Person.prototype.sayHi = function() {
+			console.log(this.name + '입니다.');
+		}
+		var 사람1 = new Person();
+		사람1.sayHi();
+
+
+	   var 프로미스 = new Promise(function(성공,실패) {
+			document.querySelector('button').addEventListener('click', function() {
+				성공();
+			})
+		})
+		async function 버튼누르기() {
+			var 결과 = await 프로미스;
+			console.log('클릭!');
+		}
+		버튼누르기();
+
+		var 오브젝트 = { name : 'Kim', age : 30 };
+		for(var 키값 in 오브젝트) {
+			console.log(오브젝트[키값]);
+		}
+		/*
+		key는 변수명(마음대로 작명 가능)
+		반복문은 오브젝트라는 자료 내부 데이터 갯수만큼 반복하게 되며
+		반복할 때마다 key라는 변수는 name, age 이렇게 데이터의 key값이 된다. 
+		*/
+	   console.log(Object.getOwnPropertyDescriptor(오브젝트, 'name'));
+	   // {value: 'Kim', writable: true, enumerable: true, configurable: true}
+
+		var 어레이 = [2,3,4,5];
+		for(var 자료 of 어레이) {
+			console.log(자료);
+		}
+		console.log(어레이[Symbol.iterator]());
+
+
+		class 부모 {};
+		부모.prototype.name = 'Park';
+		var 오브젝트 = new 부모;
+		for(var key in 오브젝트) {
+			// console.log(오브젝트[key]);
+			if(오브젝트.hasOwnProperty(key)) {
+				console.log(오브젝트[key]);
+			}
+		}
+
+		let 데이터 = [1,2,3,4,5,6,7,8,9];
+		for(let i of 데이터) {
+			for(let j of 데이터) {
+				// console.log(`${i} x ${j} = ${i*j}`)
+			}
+		}
+
+		var user = {
+			name : 'Kim',
+			age : {value : 20}
+		}
+		console.log(user.age1?.value);
+
+		var 사용자;
+		console.log(사용자 ?? '로딩중');
+		/*
+		user ?? '대신보여줄문자'
+		?? 왼쪽이 null, undefined 일 경우 오른쪽을 보여달라는 뜻.
+		*/
+	
+	</script>
+</body>
+</html>
