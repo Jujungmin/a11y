@@ -35,7 +35,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if($areaTab.length > 0) {
         const $tabBtn = document.querySelectorAll('.tab-btn');
 
+        // $tabBtn.removeAttribute('title');
         $tabBtn.forEach((_this,i,arr) => {
+            if(_this.parentElement.classList.contains('is-active')) {
+                // _this.setAttribute('title', '선택됨')
+            }
+
+                
+
             _this.addEventListener('click', function() {
                 const tabBtnId = _this.getAttribute('href').slice(1);
                 const $tabPanel = document.getElementById(tabBtnId);
@@ -48,8 +55,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 for(let i = 0; i < tabLi.length; i++) {
                     tabLi[i].classList.remove('is-active');
+                    // tabLi[i].children.removeAttribute('title');
                 }
                 _this.parentElement.classList.add('is-active');
+                console.log(_this.children)
+                // _this.setAttribute('title', '선택됨');
                 
                 for(let i = 0; i < tabPanelAll.length; i++) {
                     // console.log(i)

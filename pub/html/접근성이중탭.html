@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>탭 슬라이드</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="../js/접근성이중탭.js"></script>
+</head>
+<style>
+	/* reset.css */
+	* {margin:0; padding:0;}
+	ul {list-style:none; margin:0; padding:0;}
+	a {text-decoration:none; color:inherit;}
+	.blind {display:inline-block; position:absolute; width:1px; height:1px; margin:-1px; overflow:hidden; clip:rect(1px,1px,1px,1px); clip-path:inset(50%);}
+
+	/* style.css */
+	.area-tab ~ .area-tab {margin-top:48px;}
+	.area-tab .tab-menu {display:flex; flex-wrap:nowrap;}
+	.area-tab .tab-menu .tab-btn {display:block;}
+	.tab-panel {display:none;}
+	.tab-panel.is-block {display:block;}
+	/* .area-tab.main-tab .tab-menu {border-bottom:2px solid #ddd;} */
+	/* .area-tab.main-tab .tab-menu li {flex-grow:1;} */
+	.area-tab.main-tab .tab-menu li.is-active .tab-btn {background-color:royalblue; color:#fff; font-weight:700;}
+	.area-tab.main-tab .tab-btn {padding:20px 60px; font-size:16px; text-align:center;}
+	.area-tab.main-tab +.tab-content > .tab-panel {background-color:#f0f0f0; padding:40px;}
+	.area-tab.main-tab + .tab-content > .tab-panel > .area-tab {margin-top:40px;}
+	.area-tab.sub-tab .tab-menu {border-bottom:1px solid #888;}
+	.area-tab.sub-tab .tab-menu li {flex-grow:1;}
+	.area-tab.sub-tab .tab-menu li.is-active .tab-btn {background-color:seagreen; color:#fff; font-weight:700;}
+	.area-tab.sub-tab .tab-btn {padding:10px 20px; font-size:14px; text-align:center;}
+	.area-tab.sub-tab + .tab-content > .tab-panel {padding:20px; font-size:14px; background-color:#ddd;}
+
+	.dummy {display:none; background-color:pink; min-height:300px;}
+</style>
+<body>
+	<!-- 
+		content-tab a태그 > input으로 수정하기
+		[!] input은 키보드로 움직임이 가능하다. 근데 pageTab인지 contentTab인지 어떻게알지..
+	 -->
+	<div class="wrapper">
+		<div class="container" role="article">
+			<div class="area-tab main-tab">
+				<ul class="tab-menu"> <!-- .tab-btn href [+] .tab-panel id 맞추기 -->
+					<li class="is-active"><a href="#tab-cont1" class="tab-btn">탭1</a></li>
+					<li><a href="#tab-cont2" class="tab-btn">탭2</a></li>
+					<li><a href="#tab-cont3" class="tab-btn">탭3</a></li>
+				</ul>
+			</div>
+			<div class="tab-content">
+				<div id="tab-cont1" class="tab-panel is-block">
+					<h1 class="blind">탭1 내용</h1>
+					탭1 내용
+					<div class="area-tab sub-tab">
+						<ul class="tab-menu">
+							<li class="is-active"><a href="#tab-cont1-1" class="tab-btn">탭1-1</a></li>
+							<li><a href="#tab-cont1-2" class="tab-btn">탭1-2</a></li>
+							<li><a href="#tab-cont1-3" class="tab-btn">탭1-3</a></li>
+						</ul>
+					</div>
+					<div class="tab-content">
+						<div id="tab-cont1-1" class="tab-panel is-block">
+							<h2 class="blind">탭1-1 내용</h2>
+							탭1-1 내용
+						</div>
+						<div id="tab-cont1-2" class="tab-panel">
+							<h2 class="blind">탭1-2 내용</h2>
+							탭1-2 내용
+						</div>
+						<div id="tab-cont1-3" class="tab-panel">
+							<h2 class="blind">탭1-3 내용</h2>
+							탭1-3 내용
+							<div class="area-tab main-tab">
+								<ul class="tab-menu">
+									<li class="is-active"><a href="#tab1" class="tab-btn">TAB1</a></li>
+									<li><a href="#tab2" class="tab-btn">TAB2</a></li>
+									<li><a href="#tab3" class="tab-btn">TAB3</a></li>
+									<li><a href="#tab4" class="tab-btn">TAB4</a></li>
+								</ul>
+							</div>
+							<div class="tab-content">
+								<div id="tab1" class="tab-panel is-block">
+									<h3 class="blind">TAB1 내용</h3>
+									TAB1 내용
+								</div>
+								<div id="tab2" class="tab-panel">
+									<h3 class="blind">TAB2 내용</h3>
+									TAB2 내용
+								</div>
+								<div id="tab3" class="tab-panel">
+									<h3 class="blind">TAB3 내용</h3>
+									TAB3 내용
+								</div>
+								<div id="tab4" class="tab-panel">
+									<h3 class="blind">TAB4 내용</h3>
+									TAB4 내용
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="tab-cont2" class="tab-panel">
+					<h1 class="blind">탭2 내용</h1>
+					탭2 내용
+				</div>
+				<div id="tab-cont3" class="tab-panel">
+					<h1 class="blind">탭3 내용</h1>
+					탭3 내용
+				</div>
+			</div>
+			<div class="area-tab main-tab">
+				<ul class="tab-menu">
+					<li class="is-active"><a href="#tab-contA" class="tab-btn">탭A</a></li>
+					<li><a href="#tab-contB" class="tab-btn">탭B</a></li>
+				</ul>
+			</div>
+			<div class="tab-content">
+				<div id="tab-contA" class="tab-panel is-block">
+					<h1 class="blind">탭A 내용</h1>
+					탭A 내용
+				</div>
+				<div id="tab-contB" class="tab-panel">
+					<h1 class="blind">탭B 내용</h1>
+					탭B 내용
+				</div>
+			</div>
+			<div class="dummy">
+				dummy
+			</div>
+		</div>
+	</div>	
+</body>
+<script>
+
+</script>
+</html>
